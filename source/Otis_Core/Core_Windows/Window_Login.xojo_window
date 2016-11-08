@@ -258,7 +258,6 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   5
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "UserName"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -293,7 +292,6 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   6
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "Password"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -328,7 +326,6 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   7
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "Server Address"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -363,7 +360,6 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   8
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "Port"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -398,7 +394,6 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   9
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "Database"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -474,7 +469,6 @@ Begin Window Window_Login
       Width           =   80
    End
    Begin zPrefs zPrefsLogin
-      Enabled         =   True
       Index           =   -2147483648
       LockedInPosition=   False
       Scope           =   0
@@ -588,7 +582,6 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   15
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "Version"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -693,29 +686,30 @@ End
 		  // Grabbing password from keychain
 		  'If 1 = 1 Then 'code grabbed from xojo documentation
 		  
-		  Dim ItemToFind as KeyChainItem
-		  Dim password As String
-		  
-		  ItemToFind = New KeyChainItem
-		  
-		  'Indicate the name of the application whose keychain item you wish to find
-		  ItemToFind.ServiceName = dbUsername + "@Otis"
-		  
-		  'get application's password from the system keychain
-		  password = System.KeyChain.FindPassword(ItemToFind)
-		  dbPassword = password.ToText
-		  
-		  
-		  
-		  
-		  
-		  // Set our fields to the variables
-		  TextField_Username.Text = dbUsername
-		  TextField_Password.Text = dbPassword
-		  TextField_serverAddress.Text = dbHost
-		  TextField_Port.Text = dbPort.ToText
-		  TextField_Database.Text = dbName
-		  
+		  #If TargetMacOS Then
+		    Dim ItemToFind as KeyChainItem
+		    Dim password As String
+		    
+		    ItemToFind = New KeyChainItem
+		    
+		    'Indicate the name of the application whose keychain item you wish to find
+		    ItemToFind.ServiceName = dbUsername + "@Otis"
+		    
+		    'get application's password from the system keychain
+		    password = System.KeyChain.FindPassword(ItemToFind)
+		    dbPassword = password.ToText
+		    
+		    
+		    
+		    
+		    
+		    // Set our fields to the variables
+		    TextField_Username.Text = dbUsername
+		    TextField_Password.Text = dbPassword
+		    TextField_serverAddress.Text = dbHost
+		    TextField_Port.Text = dbPort.ToText
+		    TextField_Database.Text = dbName
+		  #EndIf
 		  
 		  // Center the window
 		  Left = (screen(0).Width - me.Width) / 2

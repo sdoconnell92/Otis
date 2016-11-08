@@ -1,5 +1,96 @@
 #tag Module
 Protected Module EIPL
+	#tag Method, Flags = &h0
+		Sub addDepartmentTotals()
+		  Dim lb1 as mdListbox = MainWindow.Listbox_LineItems
+		  Dim eiplpkid, departmentname as string
+		  dim db1 as Otis.sdoPostgreSQLDatabase = Otis.db
+		  dim rs1 as RecordSet
+		  
+		  break
+		  dim rt1 as mdRowTag
+		  rt1 = MainWindow.ListBox_EIPL.RowTag(MainWindow.ListBox_EIPL.ListIndex)
+		  eiplpkid = rt1.pkid
+		  
+		  
+		  dim sql1 as string
+		  sql1 = "Select subtotal_,department_ From discounts_ Where fkeipl = '" + eiplpkid + "' ;"
+		  rs1 = db1.SQLSelect(sql1)
+		  If db1.error then
+		    break
+		  End If
+		  
+		  Dim dict1 as new Dictionary
+		  'put the info into a Dictionary for ease of use
+		  For i1 as integer = 0 to rs1.RecordCount - 1
+		    Dim department as string
+		    Dim subtotal as integer
+		    Dim subtotaltext as string
+		    department = rs1.Field("department_").StringValue
+		    subtotal = rs1.Field("subtotal_").Value
+		    subtotaltext = myData.formatMyValue(subtotal,1)
+		    
+		    dict1.Value(department) = subtotaltext
+		    
+		    rs1.MoveNext
+		  Next
+		  
+		  
+		  For i1 as integer = 0 To lb1.ListCount - 1
+		    
+		    If lb1.RowIsFolder(i1) Then
+		      'this row is a department folder
+		      
+		      'grab the name of the department
+		      departmentname = lb1.Cell(i1,0)
+		      
+		      Dim subtotalvalue as string
+		      Dim dict1keys() as Variant
+		      dict1keys = dict1.Keys
+		      
+		      'If dict1keys.IndexOf(departmentname) > -1 Then
+		      
+		      subtotalvalue = dict1.Value(departmentname).StringValue
+		      lb1.Cell(i1,0) = departmentname + "          " + subtotalvalue
+		      
+		      'End If
+		      
+		      
+		    End If
+		    
+		    
+		  Next
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		End Sub
+	#tag EndMethod
+
 	#tag Method, Flags = &h1
 		Protected Sub add_lineitem()
 		  dim theSQL as string
@@ -152,6 +243,7 @@ Protected Module EIPL
 		    
 		    // Loading Lineitems
 		    MainWindow.Listbox_LineItems.loadMe( True )
+		    addDepartmentTotals
 		    
 		    // Loading Inventory
 		    load_Inventory( True )

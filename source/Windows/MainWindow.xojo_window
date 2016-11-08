@@ -45,7 +45,7 @@ Begin sdoWindow MainWindow
       TabIndex        =   1
       TabPanelIndex   =   0
       Top             =   0
-      Value           =   3
+      Value           =   2
       Visible         =   True
       Width           =   1182
       Begin Listbox eventList_Listbox
@@ -1631,7 +1631,7 @@ Begin sdoWindow MainWindow
          TabIndex        =   0
          TabPanelIndex   =   3
          Top             =   23
-         Value           =   1
+         Value           =   0
          Visible         =   True
          Width           =   1174
          Begin Rectangle Rectangle_LineItemDetails
@@ -5059,6 +5059,80 @@ Begin sdoWindow MainWindow
                _ScrollOffset   =   0
                _ScrollWidth    =   -1
             End
+            Begin TextField TextField1
+               AcceptTabs      =   False
+               Alignment       =   0
+               AutoDeactivate  =   True
+               AutomaticallyCheckSpelling=   False
+               BackColor       =   &cFFFFFF00
+               Bold            =   False
+               Border          =   True
+               CueText         =   ""
+               DataField       =   ""
+               DataSource      =   ""
+               Enabled         =   True
+               Format          =   ""
+               Height          =   22
+               HelpTag         =   ""
+               Index           =   -2147483648
+               InitialParent   =   "Rectangle5"
+               Italic          =   False
+               Left            =   543
+               LimitText       =   0
+               LockBottom      =   False
+               LockedInPosition=   False
+               LockLeft        =   True
+               LockRight       =   False
+               LockTop         =   True
+               Mask            =   ""
+               Password        =   False
+               ReadOnly        =   False
+               Scope           =   0
+               TabIndex        =   12
+               TabPanelIndex   =   1
+               TabStop         =   True
+               Text            =   ""
+               TextColor       =   &c00000000
+               TextFont        =   "System"
+               TextSize        =   0.0
+               TextUnit        =   0
+               Top             =   39
+               Underline       =   False
+               UseFocusRing    =   True
+               Visible         =   True
+               Width           =   80
+            End
+            Begin PushButton PushButton1
+               AutoDeactivate  =   True
+               Bold            =   False
+               ButtonStyle     =   "0"
+               Cancel          =   True
+               Caption         =   "Cancel"
+               Default         =   False
+               Enabled         =   True
+               Height          =   22
+               HelpTag         =   ""
+               Index           =   -2147483648
+               InitialParent   =   "Rectangle5"
+               Italic          =   False
+               Left            =   623
+               LockBottom      =   False
+               LockedInPosition=   False
+               LockLeft        =   True
+               LockRight       =   False
+               LockTop         =   True
+               Scope           =   0
+               TabIndex        =   13
+               TabPanelIndex   =   1
+               TabStop         =   True
+               TextFont        =   "System"
+               TextSize        =   0.0
+               TextUnit        =   0
+               Top             =   39
+               Underline       =   False
+               Visible         =   True
+               Width           =   80
+            End
          End
          Begin Rectangle Rectangle6
             AutoDeactivate  =   True
@@ -5109,11 +5183,17 @@ Begin sdoWindow MainWindow
                LockRight       =   False
                LockTop         =   True
                Mask            =   ""
+               mdFieldName     =   ""
                mdFormat        =   0
                mdpkFieldName   =   "pkid"
+               mdpkValue       =   ""
+               mdTableName     =   ""
+               parentSection   =   ""
                Password        =   False
                ReadOnly        =   False
                Scope           =   0
+               searchField     =   False
+               searchListboxName=   ""
                TabIndex        =   0
                TabPanelIndex   =   2
                TabStop         =   True
@@ -5285,7 +5365,7 @@ Begin sdoWindow MainWindow
          TabIndex        =   0
          TabPanelIndex   =   4
          Top             =   23
-         Value           =   1
+         Value           =   0
          Visible         =   True
          Width           =   1174
          Begin Rectangle Rectangle_PL_LineItemDetails
@@ -7792,11 +7872,17 @@ Begin sdoWindow MainWindow
                LockRight       =   False
                LockTop         =   True
                Mask            =   ""
+               mdFieldName     =   ""
                mdFormat        =   0
                mdpkFieldName   =   "pkid"
+               mdpkValue       =   ""
+               mdTableName     =   ""
+               parentSection   =   ""
                Password        =   False
                ReadOnly        =   False
                Scope           =   0
+               searchField     =   False
+               searchListboxName=   ""
                TabIndex        =   1
                TabPanelIndex   =   2
                TabStop         =   True
@@ -7991,7 +8077,11 @@ Begin sdoWindow MainWindow
          LockLeft        =   True
          LockRight       =   False
          LockTop         =   True
+         mdFieldName     =   ""
          mdFormat        =   0
+         mdpkFieldName   =   ""
+         mdpkValue       =   ""
+         mdTableName     =   ""
          Multiline       =   False
          Scope           =   0
          Selectable      =   False
@@ -8026,7 +8116,11 @@ Begin sdoWindow MainWindow
          LockLeft        =   True
          LockRight       =   False
          LockTop         =   True
+         mdFieldName     =   ""
          mdFormat        =   0
+         mdpkFieldName   =   ""
+         mdpkValue       =   ""
+         mdTableName     =   ""
          Multiline       =   False
          Scope           =   0
          Selectable      =   False
@@ -9454,7 +9548,7 @@ End
 		    groupName = me.Text
 		    
 		    // Prepare our SQL
-		    SQL = "Select * From Inventory Where department = $1 ;"
+		    SQL = "Select * From Inventory Where department = $1 Order By name_ ;"
 		    ps = otis.db.Prepare( SQL )
 		    ps.Bind( 0, groupName )
 		    

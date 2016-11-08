@@ -67,30 +67,30 @@ Protected Class drawEstimate
 		    infoDictVenue(0) = "Venue / Site"
 		    
 		    'Company
-		    infoDictVenue(1) = MainWindow.mdLabel_Venue_Company.Text
+		    'infoDictVenue(1) = MainWindow.mdLabel_Venue_Company.Text
 		    
 		    'Name
-		    infoDictVenue(2) = MainWindow.mdLabel_Venue_Name.Text
+		    infoDictVenue(1) = MainWindow.mdLabel_Venue_Name.Text
 		    
 		    'Address Line 1
-		    infoDictVenue(3) = MainWindow.mdLabel_Venue_AddressLine1.Text
+		    infoDictVenue(2) = MainWindow.mdLabel_Venue_AddressLine1.Text
 		    
 		    'Address Line 2
-		    infoDictVenue(4) = MainWindow.mdLabel_Venue_AddressLine2.Text
+		    'infoDictVenue(4) = MainWindow.mdLabel_Venue_AddressLine2.Text
 		    
 		    'City State, Zip
-		    infoDictVenue(5) = MainWindow.mdLabel_Venue_City.Text 
+		    infoDictVenue(3) = MainWindow.mdLabel_Venue_City.Text 
 		    If MainWindow.mdLabel_Venue_City.Text <> "" Or MainWindow.mdLabel_Venue_State.Text <> "" Then
-		      infoDictVenue(5) = infoDictVenue(5) + ", "
+		      infoDictVenue(3) = infoDictVenue(3) + ", "
 		    End If
-		    infoDictVenue(5) = infoDictVenue(5) + MainWindow.mdLabel_Venue_State.Text + " " + MainWindow.mdLabel_Venue_Zip.Text
+		    infoDictVenue(3) = infoDictVenue(3) + MainWindow.mdLabel_Venue_State.Text + " " + MainWindow.mdLabel_Venue_Zip.Text
 		    
 		    
 		    'Phone
-		    infoDictVenue(6) = MainWindow.mdLabel_Venue_Phone.Text
+		    'infoDictVenue(6) = MainWindow.mdLabel_Venue_Phone.Text
 		    
 		    'Email
-		    infoDictVenue(7) = MainWindow.mdLabel_Venue_Email.Text
+		    'infoDictVenue(7) = MainWindow.mdLabel_Venue_Email.Text
 		    
 		    
 		  End If
