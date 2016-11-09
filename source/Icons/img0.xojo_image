@@ -1,36 +1,39 @@
 #tag MultiImage
 Image img0
 	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAA6QzpcVXNlcnNcc2VhblxXb3J0aFNhdmluZ1xyZXBvc1xPdGlzXGltYWdlc291cmNlc1xpbWcwLnBuZwMAAAAAAQAEAAAAAAEAAAAAAAAA
+		FullPath = C:\Users\sean\WorthSaving\repos\Otis\imagesources\img0.png
+		PartialPath = ..\imagesources\img0.png
 		#tag ImageSpecification
 			Comment = 
 			Device = 31
-			HSize = -1.00
+			HSize = 2208.00
 			Orientation = Any
 			Platform = 15
 			PPI = 72
-			VSize = -1.00
+			VSize = 1129.00
 		#tag EndImageSpecification
 	#tag EndImageRepresentation
 	#tag ImageRepresentation
 		#tag ImageSpecification
 			Comment = 
 			Device = 31
-			HSize = -1.00
+			HSize = 2208.00
 			Orientation = Any
 			Platform = 15
 			PPI = 144
-			VSize = -1.00
+			VSize = 1129.00
 		#tag EndImageSpecification
 	#tag EndImageRepresentation
 	#tag ImageRepresentation
 		#tag ImageSpecification
 			Comment = 
 			Device = 31
-			HSize = -1.00
+			HSize = 2208.00
 			Orientation = Any
 			Platform = 15
 			PPI = 216
-			VSize = -1.00
+			VSize = 1129.00
 		#tag EndImageSpecification
 	#tag EndImageRepresentation
 End Image

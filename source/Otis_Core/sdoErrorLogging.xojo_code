@@ -30,7 +30,7 @@ Protected Module sdoErrorLogging
 		  Case 0  'No Error                     Just Info          [no messagebox]
 		    
 		  Case 1  'Expected Error          No Problem     [no messagebox]
-		     
+		    
 		  Case 2  'Expected Error          No Problem     [messagebox]
 		    errorMsgbox( pFacility, pMessage )
 		    

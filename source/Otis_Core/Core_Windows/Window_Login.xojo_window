@@ -31,7 +31,7 @@ Begin Window Window_Login
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &c00FFFFFF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -73,7 +73,7 @@ Begin Window Window_Login
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &c00FFFFFF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -115,7 +115,7 @@ Begin Window Window_Login
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &c00FFFFFF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -157,7 +157,7 @@ Begin Window Window_Login
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &c00FFFFFF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -199,7 +199,7 @@ Begin Window Window_Login
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &c00FFFFFF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -258,6 +258,7 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   5
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "UserName"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -292,6 +293,7 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   6
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Password"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -326,6 +328,7 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   7
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Server Address"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -360,6 +363,7 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   8
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Port"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -394,6 +398,7 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   9
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Database"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -469,6 +474,7 @@ Begin Window Window_Login
       Width           =   80
    End
    Begin zPrefs zPrefsLogin
+      Enabled         =   True
       Index           =   -2147483648
       LockedInPosition=   False
       Scope           =   0
@@ -582,6 +588,7 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   15
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Version"
       TextAlign       =   0
       TextColor       =   &c00000000

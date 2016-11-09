@@ -30,10 +30,10 @@ Protected Class drawEstimate
 		    infoDictContact(0) = "Contact"
 		    
 		    'Company
-		    infoDictContact(1) = MainWindow.mdLabel_Contact_Company.Text
+		    infoDictContact(2) = MainWindow.mdLabel_Contact_Company.Text
 		    
 		    'Name
-		    infoDictContact(2) = MainWindow.mdLabel_Contact_NameFirst.Text + MainWindow.mdLabel_Contact_NameLast.Text
+		    infoDictContact(1) = MainWindow.mdLabel_Contact_NameFirst.Text + " " + MainWindow.mdLabel_Contact_NameLast.Text
 		    
 		    'Address Line 1
 		    infoDictContact(3) = MainWindow.mdLabel_EIPL_Contact_AddressLine1.Text
@@ -159,7 +159,7 @@ Protected Class drawEstimate
 		    y1 = y1 + largeBoxHeight
 		    y2 = y1
 		    'g.DrawLine( x1, y1, x2, y2 )
-		    g.FillRect( x1, y1, boxWidth, lineWidth )
+		    g.FillRect( x1, y1, boxWidth + 1, lineWidth )
 		    
 		    'top side venue box
 		    x1 = margin + boxWidth + sectionSpacing
@@ -183,7 +183,7 @@ Protected Class drawEstimate
 		    y1 = y1 + largeBoxHeight
 		    y2 = y1
 		    'g.DrawLine( x1, y1, x2, y2 )
-		    g.FillRect( x1, y1, boxWidth, lineWidth )
+		    g.FillRect( x1, y1, boxWidth + 1, lineWidth )
 		    
 		    
 		  end if
@@ -491,7 +491,7 @@ Protected Class drawEstimate
 		    For i1 as integer = 0 To pInfo.Ubound
 		      
 		      // Calculate the box and wrapWidths
-		      n2 = pageDimentions(0) - originalx
+		      n2 = pageDimentions(0) - originalx - margin * 2
 		      n4 = pColumnWidths(i1)
 		      d1 = n4 / 100 
 		      boxWidth = n2 * d1
@@ -605,11 +605,11 @@ Protected Class drawEstimate
 		    
 		    sourceListbox = MainWindow.Listbox_LineItems
 		    
-		    headers()  = Array ( "Name", "Time", "Rate", "QTY", "Price", "DiscSum", "DiscPerc", "Total"  )
-		    columns()  = Array ( 0,2,3,4,5,6,7,8 )
-		    columnWidths()  = Array ( 23,8,10,8,12,12,12, 15 )
-		    justification()  = Array( "Left", "Center", "Center", "Center", "Center", "Center", "Center", "Center" )
-		    showColumn()  = Array( True, True, True, True, True, True, True, True )
+		    headers()  = Array ( "Name","Cat","SubCat", "Time", "Rate", "QTY", "Price", "DiscSum", "DiscPerc", "Total"  )
+		    columns()  = Array ( 0,10,11,2,3,4,5,6,7,8 )
+		    columnWidths()  = Array ( 23,15,15,5,6,5,8,5,5, 13 )
+		    justification()  = Array( "Left", "Center","Center", "Center", "Center", "Center", "Center", "Center", "Center", "Right" )
+		    showColumn()  = Array( True, True, True, True, True, True, True, True, True, True )
 		    
 		  ElseIf Type = "Pack List" Then
 		    
@@ -625,7 +625,7 @@ Protected Class drawEstimate
 		  
 		  dim spaceAboveLine as integer = 1 * MasterMult
 		  dim spaceBelowLine as integer = 1 * MasterMult
-		  dim summaryXValue as integer = 400 * MasterMult
+		  dim summaryXValue as integer = 350 * MasterMult
 		  
 		  If Type = "Estimate" Or Type = "Invoice" Then
 		    // Check for discounts
@@ -644,10 +644,10 @@ Protected Class drawEstimate
 		    
 		    'adjust arrays accordingly
 		    If Not showDiscountAmount then
-		      showColumn(5) = False
+		      showColumn(7) = False
 		    End If
 		    If Not showDiscountPerc Then
-		      showColumn(6) = False
+		      showColumn(8) = False
 		    End If
 		    
 		    
@@ -926,7 +926,7 @@ Protected Class drawEstimate
 		          If drawLine = True Then
 		            // Draw the line
 		            g.Bold = True
-		            drawLine( x, y, info(), Array(50,50), Array( "Right", "Left" ), Array( True, True ) )
+		            drawLine( x, y, info(), Array(80,20), Array( "Right", "Left" ), Array( True, True ) )
 		            g.Bold = False
 		          End If
 		        End If
@@ -938,7 +938,7 @@ Protected Class drawEstimate
 		        // Draw the infobox
 		        If finalSummaryIndex = 0 Then
 		          
-		          boxH = ( finalSummaryDict.Ubound + 1 ) * ( g.TextHeight +spaceAboveLine + spaceBelowLine ) + 4
+		          boxH = ( finalSummaryDict.Ubound + 3 ) * ( g.TextHeight +spaceAboveLine + spaceBelowLine ) + 4
 		          boxW = summaryXValue - ( 90 * masterMult ) - margin
 		          infoBoxWidth = boxW
 		          
@@ -960,7 +960,7 @@ Protected Class drawEstimate
 		          'Bottom Line
 		          boxX = margin + ( 30 * masterMult )
 		          boxY = y + boxH
-		          g.FillRect( boxX, boxY, boxW, lineWidth )
+		          g.FillRect( boxX, boxY, boxW + 1, lineWidth )
 		          
 		          'Set up a new y for the infobox
 		          yinfobox = y

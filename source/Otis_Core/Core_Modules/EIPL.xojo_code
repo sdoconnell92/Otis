@@ -7,7 +7,7 @@ Protected Module EIPL
 		  dim db1 as Otis.sdoPostgreSQLDatabase = Otis.db
 		  dim rs1 as RecordSet
 		  
-		  break
+		  
 		  dim rt1 as mdRowTag
 		  rt1 = MainWindow.ListBox_EIPL.RowTag(MainWindow.ListBox_EIPL.ListIndex)
 		  eiplpkid = rt1.pkid
@@ -51,7 +51,7 @@ Protected Module EIPL
 		      'If dict1keys.IndexOf(departmentname) > -1 Then
 		      
 		      subtotalvalue = dict1.Value(departmentname).StringValue
-		      lb1.Cell(i1,0) = departmentname + "          " + subtotalvalue
+		      lb1.Cell(i1,0) = departmentname + "   |       " + subtotalvalue
 		      
 		      'End If
 		      
@@ -417,14 +417,14 @@ Protected Module EIPL
 		    
 		    // Listbox_LineItems
 		    MainWindow.Listbox_LineItems.mdTableName = "lineitems"
-		    MainWindow.Listbox_LineItems.mdHeaders() = Array ( "Name", "Department", "Time", "Rate", "QTY", "Price", "DiscSum", "DiscPerc", "Total", "Notes"  )
-		    MainWindow.Listbox_LineItems.mdFieldNames() = Array ( "name_", "department", "time_", "rate_", "quantity_", "price", "discountamount_", "discountperc_", "total_", "note_" )
+		    MainWindow.Listbox_LineItems.mdHeaders() = Array ( "Name", "Department", "Time", "Rate", "QTY", "Price", "DiscSum", "DiscPerc", "Total", "Notes","Category","SubCategory"  )
+		    MainWindow.Listbox_LineItems.mdFieldNames() = Array ( "name_", "department", "time_", "rate_", "quantity_", "price", "discountamount_", "discountperc_", "total_", "note_","category","subcategory" )
 		    MainWindow.Listbox_LineItems.mdpkFieldName = "pkid"
 		    MainWindow.Listbox_LineItems.mdSortFields = Array( "department", "name_" )
-		    MainWindow.Listbox_LineItems.mdColumnTypes() = Array ( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
-		    MainWindow.Listbox_LineItems.mdFormats() = Array ( 0, 0, 0, 0, 0, 1, 1 , 3, 1, 0 )
-		    MainWindow.Listbox_LineItems.mdColumnWidths = "29% ,10% ,7% ,7% ,7% ,10% ,10% ,10% ,10% ,0%"
-		    MainWindow.Listbox_LineItems.mdJustification = Array( 1,1,2,2,2,3,3,3,3,0)
+		    MainWindow.Listbox_LineItems.mdColumnTypes() = Array ( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+		    MainWindow.Listbox_LineItems.mdFormats() = Array ( 0, 0, 0, 0, 0, 1, 1 , 3, 1, 0, 0, 0 )
+		    MainWindow.Listbox_LineItems.mdColumnWidths = "29% ,10% ,7% ,7% ,7% ,10% ,10% ,10% ,10% ,0%,0%,0%"
+		    MainWindow.Listbox_LineItems.mdJustification = Array( 1,1,2,2,2,3,3,3,3,0,0,0)
 		    MainWindow.Listbox_LineItems.mdfkFieldName = "fkeipl"
 		    
 		    // TextField_LineItems_Name
@@ -523,13 +523,13 @@ Protected Module EIPL
 		    
 		    //  Listbox_EIPL_Inventory
 		    MainWindow.Listbox_EIPL_Inventory.mdTableName = "inventory"
-		    MainWindow.Listbox_EIPL_Inventory.mdHeaders() = Array( "Name", "Department" )
-		    MainWindow.Listbox_EIPL_Inventory.mdFieldNames() = Array( "name_", "department" )
+		    MainWindow.Listbox_EIPL_Inventory.mdHeaders() = Array( "Name","Price", "Department" )
+		    MainWindow.Listbox_EIPL_Inventory.mdFieldNames() = Array( "name_","price", "department" )
 		    MainWindow.Listbox_EIPL_Inventory.mdpkFieldName = "pkid"
 		    MainWindow.Listbox_EIPL_Inventory.mdSortFields = Array( "department", "name_" )
-		    MainWindow.Listbox_EIPL_Inventory.mdColumnTypes() = Array( 0, 0 )
-		    MainWindow.Listbox_EIPL_Inventory.mdFormats() = Array ( 0,0 )
-		    MainWindow.Listbox_EIPL_Inventory.mdColumnWidths = "100%,0%"
+		    MainWindow.Listbox_EIPL_Inventory.mdColumnTypes() = Array( 0, 0, 0 )
+		    MainWindow.Listbox_EIPL_Inventory.mdFormats() = Array ( 0,1,0)
+		    MainWindow.Listbox_EIPL_Inventory.mdColumnWidths = "80%,20%,0%"
 		    
 		    
 		    // Payments
@@ -1063,7 +1063,7 @@ Protected Module EIPL
 		  dim theGroups() as string
 		  dim theValue as string
 		  
-		  dim groupColumnNumber as integer = 1
+		  dim groupColumnNumber as integer = 2
 		  
 		  
 		  // Gather all of the group names

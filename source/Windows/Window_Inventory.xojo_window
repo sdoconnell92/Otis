@@ -649,7 +649,7 @@ End
 		Sub loadInventory()
 		  
 		  
-		  Listbox_inventory.loadMe
+		  Listbox_inventory.loadMe(true)
 		  
 		  
 		  resizeTextFields
@@ -871,6 +871,76 @@ End
 		    End If
 		    
 		  End If
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TextField1
+	#tag Event
+		Sub Saved()
+		  loadInventory
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TextField2
+	#tag Event
+		Sub Saved()
+		  loadInventory
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TextField3
+	#tag Event
+		Sub Saved()
+		  loadInventory
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TextField4
+	#tag Event
+		Sub Saved()
+		  loadInventory
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TextField5
+	#tag Event
+		Sub Saved()
+		  loadInventory
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TextField6
+	#tag Event
+		Sub Saved()
+		  loadInventory
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TextField7
+	#tag Event
+		Sub Saved()
+		  loadInventory
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TextField8
+	#tag Event
+		Sub Saved()
+		  loadInventory
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TextField9
+	#tag Event
+		Sub Saved()
+		  loadInventory
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TextField10
+	#tag Event
+		Sub Saved()
+		  loadInventory
 		End Sub
 	#tag EndEvent
 #tag EndEvents

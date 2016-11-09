@@ -313,7 +313,7 @@ Begin sdoWindow MainWindow
          Alignment       =   0
          AutoDeactivate  =   True
          AutomaticallyCheckSpelling=   False
-         BackColor       =   &cFFFFFF00
+         BackColor       =   &c00FFFFFF
          Bold            =   False
          Border          =   True
          CueText         =   ""
@@ -385,9 +385,9 @@ Begin sdoWindow MainWindow
       Begin Rectangle Rectangle4
          AutoDeactivate  =   True
          BorderWidth     =   1
-         BottomRightColor=   &cABABAB00
+         BottomRightColor=   &c00ABABAB
          Enabled         =   True
-         FillColor       =   &cC7C7C700
+         FillColor       =   &c00C7C7C7
          Height          =   582
          HelpTag         =   ""
          Index           =   -2147483648
@@ -402,7 +402,7 @@ Begin sdoWindow MainWindow
          TabIndex        =   1
          TabPanelIndex   =   2
          Top             =   36
-         TopLeftColor    =   &cABABAB00
+         TopLeftColor    =   &c00ABABAB
          Visible         =   True
          Width           =   801
          Begin Label VenuesListbox_Label
@@ -444,7 +444,7 @@ Begin sdoWindow MainWindow
             Alignment       =   0
             AutoDeactivate  =   True
             AutomaticallyCheckSpelling=   False
-            BackColor       =   &cFFFFFF00
+            BackColor       =   &c00FFFFFF
             Bold            =   False
             Border          =   True
             CueText         =   ""
@@ -699,7 +699,7 @@ Begin sdoWindow MainWindow
             Alignment       =   0
             AutoDeactivate  =   True
             AutomaticallyCheckSpelling=   True
-            BackColor       =   &cFFFFFF00
+            BackColor       =   &c00FFFFFF
             Bold            =   False
             Border          =   True
             DataField       =   ""
@@ -963,7 +963,7 @@ Begin sdoWindow MainWindow
             Alignment       =   0
             AutoDeactivate  =   True
             AutomaticallyCheckSpelling=   False
-            BackColor       =   &cFFFFFF00
+            BackColor       =   &c00FFFFFF
             Bold            =   False
             Border          =   True
             CueText         =   ""
@@ -1045,7 +1045,7 @@ Begin sdoWindow MainWindow
             Alignment       =   0
             AutoDeactivate  =   True
             AutomaticallyCheckSpelling=   False
-            BackColor       =   &cFFFFFF00
+            BackColor       =   &c00FFFFFF
             Bold            =   False
             Border          =   True
             CueText         =   ""
@@ -1096,7 +1096,7 @@ Begin sdoWindow MainWindow
             Alignment       =   0
             AutoDeactivate  =   True
             AutomaticallyCheckSpelling=   False
-            BackColor       =   &cFFFFFF00
+            BackColor       =   &c00FFFFFF
             Bold            =   False
             Border          =   True
             CueText         =   ""
@@ -1147,7 +1147,7 @@ Begin sdoWindow MainWindow
             Alignment       =   0
             AutoDeactivate  =   True
             AutomaticallyCheckSpelling=   False
-            BackColor       =   &cFFFFFF00
+            BackColor       =   &c00FFFFFF
             Bold            =   False
             Border          =   True
             CueText         =   ""
@@ -1198,7 +1198,7 @@ Begin sdoWindow MainWindow
             Alignment       =   0
             AutoDeactivate  =   True
             AutomaticallyCheckSpelling=   False
-            BackColor       =   &cFFFFFF00
+            BackColor       =   &c00FFFFFF
             Bold            =   False
             Border          =   True
             CueText         =   ""
@@ -1280,7 +1280,7 @@ Begin sdoWindow MainWindow
             Alignment       =   0
             AutoDeactivate  =   True
             AutomaticallyCheckSpelling=   False
-            BackColor       =   &cFFFFFF00
+            BackColor       =   &c00FFFFFF
             Bold            =   False
             Border          =   True
             CueText         =   ""
@@ -1362,7 +1362,7 @@ Begin sdoWindow MainWindow
             Alignment       =   0
             AutoDeactivate  =   True
             AutomaticallyCheckSpelling=   False
-            BackColor       =   &cFFFFFF00
+            BackColor       =   &c00FFFFFF
             Bold            =   False
             Border          =   True
             CueText         =   ""
@@ -1413,7 +1413,7 @@ Begin sdoWindow MainWindow
             Alignment       =   0
             AutoDeactivate  =   True
             AutomaticallyCheckSpelling=   False
-            BackColor       =   &cFFFFFF00
+            BackColor       =   &c00FFFFFF
             Bold            =   False
             Border          =   True
             CueText         =   ""
@@ -1495,7 +1495,7 @@ Begin sdoWindow MainWindow
             Alignment       =   0
             AutoDeactivate  =   True
             AutomaticallyCheckSpelling=   False
-            BackColor       =   &cFFFFFF00
+            BackColor       =   &c00FFFFFF
             Bold            =   False
             Border          =   True
             CueText         =   ""
@@ -1637,9 +1637,9 @@ Begin sdoWindow MainWindow
          Begin Rectangle Rectangle_LineItemDetails
             AutoDeactivate  =   True
             BorderWidth     =   1
-            BottomRightColor=   &cABABAB00
+            BottomRightColor=   &c00ABABAB
             Enabled         =   True
-            FillColor       =   &cC7C7C700
+            FillColor       =   &c00C7C7C7
             Height          =   118
             HelpTag         =   ""
             Index           =   -2147483648
@@ -1654,7 +1654,7 @@ Begin sdoWindow MainWindow
             TabIndex        =   0
             TabPanelIndex   =   1
             Top             =   507
-            TopLeftColor    =   &cABABAB00
+            TopLeftColor    =   &c00ABABAB
             Visible         =   True
             Width           =   1161
             Begin mdTextField TextField_LineItems_QTY
@@ -1662,7 +1662,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -1830,7 +1830,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -1881,7 +1881,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -1971,7 +1971,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -2061,7 +2061,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -2151,7 +2151,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -2241,7 +2241,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -2292,7 +2292,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -2382,7 +2382,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   True
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                DataField       =   ""
@@ -2475,7 +2475,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -2643,7 +2643,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -2755,9 +2755,9 @@ Begin sdoWindow MainWindow
          Begin Rectangle Rectangle1
             AutoDeactivate  =   True
             BorderWidth     =   1
-            BottomRightColor=   &cABABAB00
+            BottomRightColor=   &c00ABABAB
             Enabled         =   True
-            FillColor       =   &cC7C7C700
+            FillColor       =   &c00C7C7C7
             Height          =   312
             HelpTag         =   ""
             Index           =   -2147483648
@@ -2772,7 +2772,7 @@ Begin sdoWindow MainWindow
             TabIndex        =   21
             TabPanelIndex   =   2
             Top             =   33
-            TopLeftColor    =   &cABABAB00
+            TopLeftColor    =   &c00ABABAB
             Visible         =   True
             Width           =   406
             Begin PagePanel PagePanel_ConVen
@@ -3829,9 +3829,9 @@ Begin sdoWindow MainWindow
          Begin Rectangle Rectangle2
             AutoDeactivate  =   True
             BorderWidth     =   1
-            BottomRightColor=   &cABABAB00
+            BottomRightColor=   &c00ABABAB
             Enabled         =   True
-            FillColor       =   &cC7C7C700
+            FillColor       =   &c00C7C7C7
             Height          =   312
             HelpTag         =   ""
             Index           =   -2147483648
@@ -3846,7 +3846,7 @@ Begin sdoWindow MainWindow
             TabIndex        =   22
             TabPanelIndex   =   2
             Top             =   33
-            TopLeftColor    =   &cABABAB00
+            TopLeftColor    =   &c00ABABAB
             Visible         =   True
             Width           =   268
             Begin mdTextField TextField_EIPL_DueDate
@@ -3854,7 +3854,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -3939,7 +3939,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -4058,7 +4058,7 @@ Begin sdoWindow MainWindow
                Alignment       =   3
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -4109,7 +4109,7 @@ Begin sdoWindow MainWindow
                Alignment       =   3
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -4194,7 +4194,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -4315,9 +4315,9 @@ Begin sdoWindow MainWindow
          Begin Rectangle Rectangle3
             AutoDeactivate  =   True
             BorderWidth     =   1
-            BottomRightColor=   &cABABAB00
+            BottomRightColor=   &c00ABABAB
             Enabled         =   True
-            FillColor       =   &cC7C7C700
+            FillColor       =   &c00C7C7C7
             Height          =   278
             HelpTag         =   ""
             Index           =   -2147483648
@@ -4332,7 +4332,7 @@ Begin sdoWindow MainWindow
             TabIndex        =   23
             TabPanelIndex   =   2
             Top             =   344
-            TopLeftColor    =   &cABABAB00
+            TopLeftColor    =   &c00ABABAB
             Visible         =   True
             Width           =   673
             Begin mdListbox Listbox_EIPLDiscounts
@@ -4552,9 +4552,9 @@ Begin sdoWindow MainWindow
          Begin Rectangle Rectangle5
             AutoDeactivate  =   True
             BorderWidth     =   1
-            BottomRightColor=   &cABABAB00
+            BottomRightColor=   &c00ABABAB
             Enabled         =   True
-            FillColor       =   &cC7C7C700
+            FillColor       =   &c00C7C7C7
             Height          =   477
             HelpTag         =   ""
             Index           =   -2147483648
@@ -4569,7 +4569,7 @@ Begin sdoWindow MainWindow
             TabIndex        =   3
             TabPanelIndex   =   1
             Top             =   31
-            TopLeftColor    =   &cABABAB00
+            TopLeftColor    =   &c00ABABAB
             Visible         =   True
             Width           =   1161
             Begin mdTextField TextField_searchInventory
@@ -4577,7 +4577,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -5059,12 +5059,12 @@ Begin sdoWindow MainWindow
                _ScrollOffset   =   0
                _ScrollWidth    =   -1
             End
-            Begin TextField TextField1
+            Begin TextField TextField_ChangeTimes
                AcceptTabs      =   False
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -5102,12 +5102,12 @@ Begin sdoWindow MainWindow
                Visible         =   True
                Width           =   80
             End
-            Begin PushButton PushButton1
+            Begin PushButton PushButton_ChangeTimes
                AutoDeactivate  =   True
                Bold            =   False
                ButtonStyle     =   "0"
                Cancel          =   True
-               Caption         =   "Cancel"
+               Caption         =   "Change Times"
                Default         =   False
                Enabled         =   True
                Height          =   22
@@ -5131,15 +5131,15 @@ Begin sdoWindow MainWindow
                Top             =   39
                Underline       =   False
                Visible         =   True
-               Width           =   80
+               Width           =   90
             End
          End
          Begin Rectangle Rectangle6
             AutoDeactivate  =   True
             BorderWidth     =   1
-            BottomRightColor=   &cABABAB00
+            BottomRightColor=   &c00ABABAB
             Enabled         =   True
-            FillColor       =   &cC7C7C700
+            FillColor       =   &c00C7C7C7
             Height          =   589
             HelpTag         =   ""
             Index           =   -2147483648
@@ -5154,7 +5154,7 @@ Begin sdoWindow MainWindow
             TabIndex        =   24
             TabPanelIndex   =   2
             Top             =   33
-            TopLeftColor    =   &cABABAB00
+            TopLeftColor    =   &c00ABABAB
             Visible         =   True
             Width           =   481
             Begin mdTextField TextField_EIPLName
@@ -5162,7 +5162,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -5248,7 +5248,7 @@ Begin sdoWindow MainWindow
             Alignment       =   0
             AutoDeactivate  =   True
             AutomaticallyCheckSpelling=   False
-            BackColor       =   &cFFFFFF00
+            BackColor       =   &c00FFFFFF
             Bold            =   False
             Border          =   True
             CueText         =   ""
@@ -5299,7 +5299,7 @@ Begin sdoWindow MainWindow
             Alignment       =   0
             AutoDeactivate  =   True
             AutomaticallyCheckSpelling=   False
-            BackColor       =   &cFFFFFF00
+            BackColor       =   &c00FFFFFF
             Bold            =   False
             Border          =   True
             CueText         =   ""
@@ -5371,9 +5371,9 @@ Begin sdoWindow MainWindow
          Begin Rectangle Rectangle_PL_LineItemDetails
             AutoDeactivate  =   True
             BorderWidth     =   1
-            BottomRightColor=   &cABABAB00
+            BottomRightColor=   &c00ABABAB
             Enabled         =   True
-            FillColor       =   &cC7C7C700
+            FillColor       =   &c00C7C7C7
             Height          =   118
             HelpTag         =   ""
             Index           =   -2147483648
@@ -5388,7 +5388,7 @@ Begin sdoWindow MainWindow
             TabIndex        =   0
             TabPanelIndex   =   1
             Top             =   507
-            TopLeftColor    =   &cABABAB00
+            TopLeftColor    =   &c00ABABAB
             Visible         =   True
             Width           =   1161
             Begin mdTextField TextField_PL_LineItems_QTY
@@ -5396,7 +5396,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -5525,7 +5525,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -5576,7 +5576,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -5666,7 +5666,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -5756,7 +5756,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -5846,7 +5846,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -5936,7 +5936,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -5987,7 +5987,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   True
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                DataField       =   ""
@@ -6180,9 +6180,9 @@ Begin sdoWindow MainWindow
          Begin Rectangle Rectangle7
             AutoDeactivate  =   True
             BorderWidth     =   1
-            BottomRightColor=   &cABABAB00
+            BottomRightColor=   &c00ABABAB
             Enabled         =   True
-            FillColor       =   &cC7C7C700
+            FillColor       =   &c00C7C7C7
             Height          =   312
             HelpTag         =   ""
             Index           =   -2147483648
@@ -6197,7 +6197,7 @@ Begin sdoWindow MainWindow
             TabIndex        =   21
             TabPanelIndex   =   2
             Top             =   33
-            TopLeftColor    =   &cABABAB00
+            TopLeftColor    =   &c00ABABAB
             Visible         =   True
             Width           =   406
             Begin PagePanel PagePanel_PL_ConVen
@@ -7254,9 +7254,9 @@ Begin sdoWindow MainWindow
          Begin Rectangle Rectangle8
             AutoDeactivate  =   True
             BorderWidth     =   1
-            BottomRightColor=   &cABABAB00
+            BottomRightColor=   &c00ABABAB
             Enabled         =   True
-            FillColor       =   &cC7C7C700
+            FillColor       =   &c00C7C7C7
             Height          =   312
             HelpTag         =   ""
             Index           =   -2147483648
@@ -7271,7 +7271,7 @@ Begin sdoWindow MainWindow
             TabIndex        =   22
             TabPanelIndex   =   2
             Top             =   33
-            TopLeftColor    =   &cABABAB00
+            TopLeftColor    =   &c00ABABAB
             Visible         =   True
             Width           =   268
             Begin Label Label_PL_TypeLabel
@@ -7314,7 +7314,7 @@ Begin sdoWindow MainWindow
             Alignment       =   0
             AutoDeactivate  =   True
             AutomaticallyCheckSpelling=   False
-            BackColor       =   &cFFFFFF00
+            BackColor       =   &c00FFFFFF
             Bold            =   False
             Border          =   True
             CueText         =   ""
@@ -7437,9 +7437,9 @@ Begin sdoWindow MainWindow
          Begin Rectangle Rectangle9
             AutoDeactivate  =   True
             BorderWidth     =   1
-            BottomRightColor=   &cABABAB00
+            BottomRightColor=   &c00ABABAB
             Enabled         =   True
-            FillColor       =   &cC7C7C700
+            FillColor       =   &c00C7C7C7
             Height          =   278
             HelpTag         =   ""
             Index           =   -2147483648
@@ -7454,16 +7454,16 @@ Begin sdoWindow MainWindow
             TabIndex        =   23
             TabPanelIndex   =   2
             Top             =   344
-            TopLeftColor    =   &cABABAB00
+            TopLeftColor    =   &c00ABABAB
             Visible         =   True
             Width           =   673
          End
          Begin Rectangle Rectangle10
             AutoDeactivate  =   True
             BorderWidth     =   1
-            BottomRightColor=   &cABABAB00
+            BottomRightColor=   &c00ABABAB
             Enabled         =   True
-            FillColor       =   &cC7C7C700
+            FillColor       =   &c00C7C7C7
             Height          =   477
             HelpTag         =   ""
             Index           =   -2147483648
@@ -7478,7 +7478,7 @@ Begin sdoWindow MainWindow
             TabIndex        =   14
             TabPanelIndex   =   1
             Top             =   31
-            TopLeftColor    =   &cABABAB00
+            TopLeftColor    =   &c00ABABAB
             Visible         =   True
             Width           =   1161
             Begin mdTextField TextField_PL_searchInventory
@@ -7486,7 +7486,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -7792,9 +7792,9 @@ Begin sdoWindow MainWindow
          Begin Rectangle Rectangle11
             AutoDeactivate  =   True
             BorderWidth     =   1
-            BottomRightColor=   &cABABAB00
+            BottomRightColor=   &c00ABABAB
             Enabled         =   True
-            FillColor       =   &cC7C7C700
+            FillColor       =   &c00C7C7C7
             Height          =   589
             HelpTag         =   ""
             Index           =   -2147483648
@@ -7809,7 +7809,7 @@ Begin sdoWindow MainWindow
             TabIndex        =   24
             TabPanelIndex   =   2
             Top             =   33
-            TopLeftColor    =   &cABABAB00
+            TopLeftColor    =   &c00ABABAB
             Visible         =   True
             Width           =   481
             Begin Label Label_plName
@@ -7851,7 +7851,7 @@ Begin sdoWindow MainWindow
                Alignment       =   0
                AutoDeactivate  =   True
                AutomaticallyCheckSpelling=   False
-               BackColor       =   &cFFFFFF00
+               BackColor       =   &c00FFFFFF
                Bold            =   False
                Border          =   True
                CueText         =   ""
@@ -9647,6 +9647,110 @@ End
 		  // Grab the returned pkid to select the line item
 		  thepkid = theRecordSet.Field( "inventory_to_lineitem" ).StringValue.ToText
 		  Listbox_LineItems.searchMePKID( thePKID )
+		  
+		  
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_ChangeTimes
+	#tag Event
+		Sub Action()
+		  Dim timevalue as double
+		  Dim eiplPKID as String
+		  Dim sql1 as String
+		  Dim DepartmentName,DepartmentNameArray() as string
+		  Dim rt1 as mdRowTag
+		  
+		  
+		  
+		  
+		  timevalue = val( TextField_ChangeTimes.Text )
+		  rt1 = ListBox_EIPL.RowTag(ListBox_EIPL.ListIndex)
+		  eiplPKID = rt1.pkid
+		  
+		  
+		  If Listbox_LineItems.ListIndex <> -1 Then
+		    
+		    If Listbox_LineItems.RowIsFolder(Listbox_LineItems.ListIndex) Then
+		      
+		      
+		      DepartmentNameArray = Split( ListBox_LineItems.Cell(ListBox_LineItems.ListIndex,0), "   |" )
+		      DepartmentName = DepartmentNameArray(0)
+		      
+		      sql1 = "Update lineitems Set time_ = " + timevalue.ToText + " Where fkeipl = '" + eiplPKID + "' And department = '" + DepartmentName + "';"
+		      
+		    End If
+		    
+		  End If
+		  
+		  If sql1 = "" Then
+		    sql1 = "Update lineitems Set time_ = " + timevalue.ToText + " Where fkeipl = '" + eiplPKID + "' ;"
+		  End If
+		  
+		  
+		  
+		  If sql1 <> "" Then
+		    
+		    Otis.db.SQLExecute(sql1)
+		    If Otis.db.error Then
+		      break
+		    End If
+		    
+		    'Reload the section we are in
+		    'app.masterReload( "ei" )
+		    Listbox_LineItems.loadMe()
+		    
+		    TextField_ChangeTimes.Text = ""
+		    
+		  End If
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
 		  
 		  
 		  
