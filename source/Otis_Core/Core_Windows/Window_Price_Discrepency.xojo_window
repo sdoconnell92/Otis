@@ -455,21 +455,22 @@ End
 		  dim ps as PostgreSQLPreparedStatement
 		  dim price_ as integer
 		  
-		  
-		  price_ = price( Listbox1.ListIndex )
-		  
-		  // Get the LineItems from the server
-		  SQL = "Update lineitems Set price = " + price_.ToText + " Where '" + property_lineitem_pkids + "' Like '%' || pkid || '%'  ; " 
-		  ps = otis.db.prepare( SQL )
-		  ps.SQLExecute
-		  
-		  If otis.db.error Then
-		    logErrorMessage( 4, "DBase", otis.db.errormessage )
+		  If Listbox1.ListIndex <> -1 Then
+		    price_ = price( Listbox1.ListIndex )
+		    
+		    // Get the LineItems from the server
+		    SQL = "Update lineitems Set price = " + price_.ToText + " Where '" + property_lineitem_pkids + "' Like '%' || pkid || '%'  ; " 
+		    ps = otis.db.prepare( SQL )
+		    ps.SQLExecute
+		    
+		    If otis.db.error Then
+		      logErrorMessage( 4, "DBase", otis.db.errormessage )
+		    End If
+		    
+		    MainWindow.ListBox_EIPL.loadMe( true )
+		    
+		    me.Window.Close
 		  End If
-		  
-		  MainWindow.ListBox_EIPL.loadMe( true )
-		  
-		  me.Window.Close
 		End Sub
 	#tag EndEvent
 #tag EndEvents

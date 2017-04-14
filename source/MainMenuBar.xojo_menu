@@ -34,6 +34,20 @@ Begin Menu MainMenuBar
          AutoEnable = True
          Visible = True
       End
+      Begin MenuItem FileDefaultColor
+         SpecialMenu = 0
+         Text = "Default Color"
+         Index = -2147483648
+         AutoEnable = True
+         Visible = True
+      End
+      Begin MenuItem UntitledSeparator1
+         SpecialMenu = 0
+         Text = "-"
+         Index = -2147483648
+         AutoEnable = True
+         Visible = True
+      End
       Begin MenuItem FilePrintPreview
          SpecialMenu = 0
          Text = "Print Preview"
@@ -152,6 +166,13 @@ Begin Menu MainMenuBar
          ShortcutKey = "d"
          Shortcut = "Cmd+d"
          MenuModifier = True
+         AutoEnable = True
+         Visible = True
+      End
+      Begin MenuItem EventDuplicateEvent
+         SpecialMenu = 0
+         Text = "Duplicate Event"
+         Index = -2147483648
          AutoEnable = True
          Visible = True
       End

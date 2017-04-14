@@ -109,7 +109,7 @@ Protected Module EIPL
 		  
 		  If theEIPLpkid <> "" then
 		    // Form sql string
-		    theSQL = "INSERT INTO lineitems ( fkeipl ) VALUES ( '" + theEIPLpkid + "' ) RETURNING pkid ;"
+		    theSQL = "INSERT INTO lineitems ( fkeipl,department ) VALUES ( '" + theEIPLpkid + "', '-' ) RETURNING pkid ;"
 		    
 		    // Execute sql and put contents into record set
 		    theRecordSet = otis.db.SQLSelect( theSQL )
@@ -242,11 +242,11 @@ Protected Module EIPL
 		    loadAllFromDB( "venues", s1 )
 		    
 		    // Loading Lineitems
-		    MainWindow.Listbox_LineItems.loadMe( True )
+		    MainWindow.Listbox_LineItems.loadMe( false )
 		    addDepartmentTotals
 		    
 		    // Loading Inventory
-		    load_Inventory( True )
+		    'LoadFilteredInventory( "EI" )
 		    
 		    
 		  ElseIf type = "Pack List" Then
@@ -279,7 +279,7 @@ Protected Module EIPL
 		    MainWindow.Listbox_PL_LineItems.loadMe( true )
 		    
 		    // Loading Inventory
-		    load_Inventory( True )
+		    'LoadFilteredInventory( "PL" )
 		    
 		  End if
 		  
@@ -417,14 +417,14 @@ Protected Module EIPL
 		    
 		    // Listbox_LineItems
 		    MainWindow.Listbox_LineItems.mdTableName = "lineitems"
-		    MainWindow.Listbox_LineItems.mdHeaders() = Array ( "Name", "Department", "Time", "Rate", "QTY", "Price", "DiscSum", "DiscPerc", "Total", "Notes","Category","SubCategory"  )
-		    MainWindow.Listbox_LineItems.mdFieldNames() = Array ( "name_", "department", "time_", "rate_", "quantity_", "price", "discountamount_", "discountperc_", "total_", "note_","category","subcategory" )
+		    MainWindow.Listbox_LineItems.mdHeaders() = Array ( "Name", "Department", "Time", "Rate", "QTY", "Price", "DiscSum", "DiscPerc", "Total", "Tax", "Notes","Category","SubCategory"  )
+		    MainWindow.Listbox_LineItems.mdFieldNames() = Array ( "name_", "department", "time_", "rate_", "quantity_", "price", "discountamount_", "discountperc_", "total_", "taxable_",  "note_","category","subcategory" )
 		    MainWindow.Listbox_LineItems.mdpkFieldName = "pkid"
 		    MainWindow.Listbox_LineItems.mdSortFields = Array( "department", "name_" )
-		    MainWindow.Listbox_LineItems.mdColumnTypes() = Array ( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
-		    MainWindow.Listbox_LineItems.mdFormats() = Array ( 0, 0, 0, 0, 0, 1, 1 , 3, 1, 0, 0, 0 )
-		    MainWindow.Listbox_LineItems.mdColumnWidths = "29% ,10% ,7% ,7% ,7% ,10% ,10% ,10% ,10% ,0%,0%,0%"
-		    MainWindow.Listbox_LineItems.mdJustification = Array( 1,1,2,2,2,3,3,3,3,0,0,0)
+		    MainWindow.Listbox_LineItems.mdColumnTypes() = Array ( 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0 )
+		    MainWindow.Listbox_LineItems.mdFormats() = Array ( 0, 0, 0, 0, 0, 1, 1 , 3, 1, 0, 0, 0, 0 )
+		    MainWindow.Listbox_LineItems.mdColumnWidths = "29% ,10% ,7% ,7% ,7% ,10% ,10% ,8% ,8%, 4% ,0%,0%,0%"
+		    MainWindow.Listbox_LineItems.mdJustification = Array( 1,1,2,2,2,3,3,3,3,1,0,0,0)
 		    MainWindow.Listbox_LineItems.mdfkFieldName = "fkeipl"
 		    
 		    // TextField_LineItems_Name
@@ -1047,7 +1047,280 @@ Protected Module EIPL
 	#tag EndMethod
 
 	#tag Method, Flags = &h1
-		Protected Sub load_inventory(keep_selection as Boolean)
+		Protected Sub LoadFilteredInventory(EIorPL as String,keepselection as Boolean = False)
+		  dim SQL as String
+		  dim ps as PostgreSQLPreparedStatement
+		  dim theRecordSet as RecordSet
+		  dim EIFilterValue,PLFilterValue as String
+		  dim theDataDict() as Dictionary
+		  dim EIFilter,PLFilter as string
+		  dim CurrentEIFilter,CurrentPLFilter as String
+		  dim CurrentEIScrollPos,CurrentPLScrollPos as Integer
+		  
+		  If keepselection Then
+		    // Grab the current filter categories for each inventory
+		    
+		    CurrentEIFilter = MainWindow.ComboBox_InventoryDepartmentFilter.Text
+		    CurrentPLFilter = MainWindow.ComboBox_PL_InventoryDepartmentFilter.Text
+		    
+		    // Get the current scroll position for each inventory
+		    
+		    CurrentEIScrollPos = MainWindow.Listbox_LineItems.ScrollPosition
+		    CurrentPLScrollPos = MainWindow.Listbox_PL_LineItems.ScrollPosition
+		    
+		  End If
+		  
+		  Select Case EIorPL
+		  Case "EI"
+		    
+		    // Get the current filter value
+		    EIFilterValue = MainWindow.ComboBox_InventoryDepartmentFilter.Text
+		    
+		    Select Case EIFilterValue
+		    Case "All"
+		      ' If the filter vvallue is all we can load as normal
+		      load_inventory
+		    Else
+		      ' the filter value is a department name
+		      
+		      // Prepare our SQL
+		      SQL = "Select * From Inventory Where department = $1 Order By name_ ;"
+		      ps = otis.db.Prepare( SQL )
+		      ps.Bind( 0, EIFilterValue )
+		      
+		      // Execute 
+		      theRecordSet = ps.SQLSelect
+		      
+		      dim x1 as integer
+		      // Transfer all the records into our mdDataDict
+		      While Not theRecordSet.EOF
+		        
+		        x1 = theDataDict.Ubound + 1
+		        
+		        // Redim the theDataDict array to include the new record
+		        ReDim theDataDict( x1 )
+		        theDataDict( x1 ) = new Dictionary
+		        
+		        // Loop through all of the fields in the RecordSet
+		        For i1 as integer = 1 to theRecordSet.FieldCount
+		          
+		          dim theFieldName,theFieldValue as String
+		          
+		          // Get the fieldName and value
+		          theFieldName = theRecordSet.IdxField( i1 ).Name
+		          theFieldValue = theRecordSet.IdxField( i1 ).Value
+		          
+		          // Set the dictionary record value
+		          theDataDict( x1 ).Value( theFieldName ) = theFieldValue
+		          
+		          
+		        Next
+		        
+		        theRecordSet.MoveNext
+		        
+		      Wend
+		      
+		    End Select
+		    
+		    If theDataDict.Ubound <> -1 Then
+		      MainWindow.Listbox_EIPL_Inventory.loadMe( theDataDict )
+		    End If
+		    
+		  Case "PL"
+		    
+		    // Get the current filter value
+		    PLFilterValue = MainWindow.ComboBox_PL_InventoryDepartmentFilter.Text
+		    
+		    Select Case PLFilterValue
+		    Case "All"
+		      ' If the filter vvallue is all we can load as normal
+		      load_inventory
+		    Else
+		      ' the filter value is a department name
+		      
+		      // Prepare our SQL
+		      SQL = "Select * From Inventory Where department = $1 Order By name_ ;"
+		      ps = otis.db.Prepare( SQL )
+		      ps.Bind( 0, PLFilterValue )
+		      
+		      // Execute 
+		      theRecordSet = ps.SQLSelect
+		      
+		      dim x1 as integer
+		      // Transfer all the records into our mdDataDict
+		      While Not theRecordSet.EOF
+		        
+		        x1 = theDataDict.Ubound + 1
+		        
+		        // Redim the theDataDict array to include the new record
+		        ReDim theDataDict( x1 )
+		        theDataDict( x1 ) = new Dictionary
+		        
+		        // Loop through all of the fields in the RecordSet
+		        For i1 as integer = 1 to theRecordSet.FieldCount
+		          
+		          dim theFieldName,theFieldValue as String
+		          
+		          // Get the fieldName and value
+		          theFieldName = theRecordSet.IdxField( i1 ).Name
+		          theFieldValue = theRecordSet.IdxField( i1 ).Value
+		          
+		          // Set the dictionary record value
+		          theDataDict( x1 ).Value( theFieldName ) = theFieldValue
+		          
+		          
+		        Next
+		        
+		        theRecordSet.MoveNext
+		        
+		      Wend
+		      
+		    End Select
+		    
+		    If theDataDict.Ubound <> -1 Then
+		      MainWindow.Listbox_PL_Inventory.loadMe( theDataDict )
+		    End If
+		    
+		  End Select
+		  
+		  If keepselection Then
+		    // Grab the current filter categories for each inventory
+		    If CurrentEIFilter <> "" Then
+		      MainWindow.ComboBox_InventoryDepartmentFilter.Text = CurrentEIFilter
+		    End If
+		    MainWindow.Listbox_EIPL_Inventory.ScrollPosition = CurrentEIScrollPos
+		    If CurrentPLFilter <> "" Then
+		      MainWindow.ComboBox_PL_InventoryDepartmentFilter.Text = CurrentPLFilter
+		    End If
+		    MainWindow.Listbox_PL_Inventory.ScrollPosition = CurrentPLScrollPos
+		    
+		  End If
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub load_inventory(keepselection as Boolean = False)
+		  dim EIFilter,PLFilter as string
+		  dim CurrentEIFilter,CurrentPLFilter as String
+		  dim CurrentEIScrollPos,CurrentPLScrollPos as Integer
+		  
+		  
+		  If keepselection Then
+		    // Grab the current filter categories for each inventory
+		    
+		    CurrentEIFilter = MainWindow.ComboBox_InventoryDepartmentFilter.Text
+		    CurrentPLFilter = MainWindow.ComboBox_PL_InventoryDepartmentFilter.Text
+		    
+		    // Get the current scroll position for each inventory
+		    
+		    CurrentEIScrollPos = MainWindow.Listbox_LineItems.ScrollPosition
+		    CurrentPLScrollPos = MainWindow.Listbox_PL_LineItems.ScrollPosition
+		    
+		  End If
+		  
+		  // Load the Inventory Listboxes
+		  MainWindow.Listbox_EIPL_Inventory.loadMe( False )
+		  MainWindow.Listbox_PL_Inventory.loadMe( False )
+		  
+		  
+		  // Loop through each EI listbox record grabbing unique department values
+		  dim EIDepartments() as String
+		  dim DptCol as integer = 2
+		  For i1 as integer = 0 To MainWindow.Listbox_EIPL_Inventory.ListCount - 1
+		    dim CurrentDepartment as String
+		    CurrentDepartment = MainWindow.Listbox_EIPL_Inventory.Cell(i1,DptCol)
+		    
+		    If EIDepartments.IndexOf(CurrentDepartment) = -1 Then
+		      ' The current department is not in the array yet
+		      
+		      // Lets add it
+		      EIDepartments.Append(CurrentDepartment)
+		      
+		    End If
+		  Next
+		  
+		  // Loop through each PL listbox record grabbing unique department values
+		  dim PLDepartments() as String
+		  DptCol = 2
+		  For i1 as integer = 0 To MainWindow.Listbox_PL_Inventory.ListCount - 1
+		    dim CurrentDepartment as String
+		    CurrentDepartment = MainWindow.Listbox_PL_Inventory.Cell(i1,DptCol)
+		    
+		    If PLDepartments.IndexOf(CurrentDepartment) = -1 Then
+		      ' The current department is not in the array yet
+		      
+		      // Lets add it
+		      PLDepartments.Append(CurrentDepartment)
+		      
+		    End If
+		  Next
+		  
+		  MainWindow.ComboBox_InventoryDepartmentFilter.DeleteAllRows
+		  MainWindow.ComboBox_PL_InventoryDepartmentFilter.DeleteAllRows
+		  MainWindow.ComboBox_InventoryDepartmentFilter.AddRow("All")
+		  MainWindow.ComboBox_PL_InventoryDepartmentFilter.AddRow("All")
+		  
+		  For Each dpt as string In EIDepartments
+		    MainWindow.ComboBox_InventoryDepartmentFilter.AddRow(dpt)
+		  Next
+		  For Each dpt as string In PLDepartments
+		    MainWindow.ComboBox_PL_InventoryDepartmentFilter.AddRow(dpt)
+		  Next
+		  
+		  If keepselection Then
+		    // Grab the current filter categories for each inventory
+		    If CurrentEIFilter <> "" Then
+		      MainWindow.ComboBox_InventoryDepartmentFilter.Text = CurrentEIFilter
+		    End If
+		    MainWindow.Listbox_EIPL_Inventory.ScrollPosition = CurrentEIScrollPos
+		    If CurrentPLFilter <> "" Then
+		      MainWindow.ComboBox_PL_InventoryDepartmentFilter.Text = CurrentPLFilter
+		    End If
+		    MainWindow.Listbox_PL_Inventory.ScrollPosition = CurrentPLScrollPos
+		    
+		  End If
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub load_inventory_blank(things as Boolean = false)
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub load_inventory_old(keep_selection as Boolean)
 		  dim jus as string
 		  dim jus1 as string
 		  if keep_selection = True Then
@@ -1067,9 +1340,10 @@ Protected Module EIPL
 		  
 		  
 		  // Gather all of the group names
+		  theGroups.Append("All")
 		  For i1 as integer = 0 To MainWindow.Listbox_EIPL_Inventory.ListCount - 1
 		    
-		    theValue = MainWindow.Listbox_EIPL_Inventory.Cell( i1, groupColumnNumber )
+		    theValue = MainWindow.Listbox_EIPL_Inventory.Cell( i1, 2 )
 		    
 		    If theGroups.IndexOf( theValue ) = -1 Then
 		      
@@ -1080,19 +1354,21 @@ Protected Module EIPL
 		  Next
 		  
 		  // Put group names into the combobox
+		  MainWindow.ComboBox_InventoryDepartmentFilter.DeleteAllRows
 		  MainWindow.ComboBox_InventoryDepartmentFilter.AddRows( theGroups() ) 
 		  If theGroups.IndexOf( jus1 ) > -1 Then
-		    break
+		    
 		    MainWindow.ComboBox_InventoryDepartmentFilter.Text = "All"
-		    MainWindow.ComboBox_InventoryDepartmentFilter.Text = jus1
+		    'MainWindow.ComboBox_InventoryDepartmentFilter.Text = jus1
 		    
 		  End If
 		  
 		  
 		  // Gather all of the group names
+		  theGroups.Append("All")
 		  For i1 as integer = 0 To MainWindow.Listbox_PL_Inventory.ListCount - 1
 		    
-		    theValue = MainWindow.Listbox_PL_Inventory.Cell( i1, groupColumnNumber )
+		    theValue = MainWindow.Listbox_PL_Inventory.Cell( i1, 1 )
 		    
 		    If theGroups.IndexOf( theValue ) = -1 Then
 		      
@@ -1103,16 +1379,142 @@ Protected Module EIPL
 		  Next
 		  
 		  // Put group names into the combobox
+		  MainWindow.ComboBox_PL_InventoryDepartmentFilter.DeleteAllRows
 		  MainWindow.ComboBox_PL_InventoryDepartmentFilter.AddRows( theGroups() ) 
-		  'break
+		  
 		  If theGroups.IndexOf( jus ) > -1 Then
-		    break
+		    
 		    MainWindow.ComboBox_PL_InventoryDepartmentFilter.Text = "All"
-		    MainWindow.ComboBox_PL_InventoryDepartmentFilter.Text = jus
-		    MainWindow.ComboBox_InventoryDepartmentFilter.Text = "All"
-		    MainWindow.ComboBox_InventoryDepartmentFilter.Text = jus1
+		    'MainWindow.ComboBox_PL_InventoryDepartmentFilter.Text = jus
+		    'MainWindow.ComboBox_InventoryDepartmentFilter.Text = "All"
+		    'MainWindow.ComboBox_InventoryDepartmentFilter.Text = jus1
 		    
 		  End If
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub ReloadEipl(keepFolders as Boolean = True)
+		  dim lb1 as mdListbox = MainWindow.Listbox_LineItems
+		  dim openFolders() as string
+		  dim SelectedPKID as string
+		  
+		  If keepFolders Then
+		    
+		    // Loop through all of the rows
+		    For i1 as integer = 0 to lb1.ListCount - 1
+		      
+		      If lb1.RowIsFolder(i1) Then
+		        If lb1.Expanded(i1) Then
+		          dim s1 as string
+		          dim n1 as integer
+		          n1 = lb1.Cell(i1,0).InStr(" | " )
+		          If n1 = 0 Then
+		            s1 = lb1.Cell(i1,0)
+		          Else
+		            s1 = Left( lb1.Cell(i1,0), n1 - 1 )
+		            dim continueloop as Boolean = True
+		            While continueloop
+		              If Right(s1,1) = " " Then
+		                s1 = Left(s1,len(s1) - 1)
+		              Else
+		                continueloop = False
+		              End If
+		            Wend
+		          End If
+		          openFolders.Append(s1)
+		        End If
+		      End If
+		      
+		    Next
+		    
+		    if lb1.ListIndex <> -1 Then
+		      dim aRowTag as mdRowTag
+		      aRowTag = lb1.RowTag(lb1.ListIndex)
+		      
+		      SelectedPKID = aRowTag.pkid
+		    end if
+		    
+		    
+		    
+		  End If
+		  
+		  controls_load(False)
+		  
+		  If keepFolders Then
+		    
+		    dim i1 as integer = 0
+		    
+		    While i1 <= lb1.ListCount - 1
+		      
+		      If lb1.RowIsFolder(i1) Then
+		        dim s1 as string
+		        dim n1 as integer
+		        n1 = lb1.Cell(i1,0).InStr(" | " )
+		        s1 = Left( lb1.Cell(i1,0), n1 - 1 )
+		        dim continueloop as Boolean = True
+		        While continueloop
+		          If Right(s1,1) = " " Then
+		            s1 = Left(s1,len(s1) - 1)
+		          Else
+		            continueloop = False
+		          End If
+		        Wend
+		        If openFolders.IndexOf(s1) <> -1 Then
+		          lb1.Expanded(i1) = True
+		        End If
+		        
+		      End If
+		      
+		      i1 = i1 + 1
+		      
+		    Wend
+		    
+		    If SelectedPKID <> "" Then
+		      
+		      For i2 as integer = 0 To lb1.ListCount - 1
+		        If Not lb1.RowIsFolder(i2) Then
+		          
+		          dim tRowTag as mdRowTag
+		          tRowTag = lb1.RowTag(i2)
+		          
+		          If SelectedPKID = tRowTag.pkid Then
+		            lb1.ListIndex = i2
+		          End If
+		          
+		        End If
+		        
+		      Next
+		      
+		    End If
+		    
+		  End If
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
 		End Sub
 	#tag EndMethod
 

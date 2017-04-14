@@ -62,11 +62,13 @@ Inherits Application
 		    
 		  ElseIf section = "ei" Then
 		    
-		    EIPL.controls_load( False )
+		    'EIPL.controls_load( False )
+		    EIPL.ReloadEipl
 		    
 		  ElseIf section = "pl" Then
 		    
-		    EIPL.controls_load( False )
+		    'EIPL.controls_load( False )
+		    EIPL.ReloadEipl
 		    
 		  ElseIf section = "event" Then
 		    

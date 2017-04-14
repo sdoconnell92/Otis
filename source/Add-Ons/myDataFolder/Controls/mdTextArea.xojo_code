@@ -38,6 +38,10 @@ Inherits TextArea
 	#tag Event
 		Sub LostFocus()
 		  If Not Otis.db.block_access Then
+		    // We need to check the field for single or double quotes...
+		    'If CheckForTroubleCharacters(me.Text) Then
+		    'me.Text = StripTroubleCharacters(me.Text)
+		    'End If
 		    saveValue
 		  End If
 		End Sub

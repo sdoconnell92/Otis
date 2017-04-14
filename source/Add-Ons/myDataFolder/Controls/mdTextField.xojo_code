@@ -66,7 +66,15 @@ Inherits TextField
 		Sub LostFocus()
 		  
 		  If Not Otis.db.block_access Then
-		    saveValue
+		    
+		    If Not StopSave Then
+		      
+		      // We need to check the field for single or double quotes...
+		      'If CheckForTroubleCharacters(me.Text) Then
+		      'me.Text = StripTroubleCharacters(me.Text)
+		      'End If
+		      saveValue
+		    End If
 		  Else
 		    logErrorMessage( 1, "DBase", "Access to Database is blocked at this time" )
 		  End If
@@ -265,6 +273,10 @@ Inherits TextField
 
 	#tag Hook, Flags = &h0
 		Event Saved()
+	#tag EndHook
+
+	#tag Hook, Flags = &h0
+		Event StopSave() As Boolean
 	#tag EndHook
 
 

@@ -31,7 +31,7 @@ Begin Window Window_Login
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &c00FFFFFF
+      BackColor       =   &cFFFFFF00
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -73,7 +73,7 @@ Begin Window Window_Login
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &c00FFFFFF
+      BackColor       =   &cFFFFFF00
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -115,7 +115,7 @@ Begin Window Window_Login
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &c00FFFFFF
+      BackColor       =   &cFFFFFF00
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -157,7 +157,7 @@ Begin Window Window_Login
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &c00FFFFFF
+      BackColor       =   &cFFFFFF00
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -199,7 +199,7 @@ Begin Window Window_Login
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &c00FFFFFF
+      BackColor       =   &cFFFFFF00
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -258,7 +258,6 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   5
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "UserName"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -293,7 +292,6 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   6
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "Password"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -328,7 +326,6 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   7
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "Server Address"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -363,7 +360,6 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   8
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "Port"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -398,7 +394,6 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   9
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "Database"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -474,7 +469,6 @@ Begin Window Window_Login
       Width           =   80
    End
    Begin zPrefs zPrefsLogin
-      Enabled         =   True
       Index           =   -2147483648
       LockedInPosition=   False
       Scope           =   0
@@ -588,7 +582,6 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   15
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "Version"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -728,7 +721,7 @@ End
 		  dim PrefFolder as FolderItem
 		  PrefFolder = SpecialFolder.ApplicationData.Child( "Otis" )
 		  dim updater as new Kaju.UpdateChecker( PrefFolder )
-		  updater.ServerPublicRSAKey = "30820120300D06092A864886F70D01010105000382010D00308201080282010100CBAC639041952E744E95F250C79199901DCDE28C9FFCBEA38C05D45779F5B9CC14DE6EFCAE0D884D3C1D3FB8CC990A775B1FD0B5619D229A5760D7795E073E34DE649B28438B8B0653F36347F7622F477073A191D37C2F33B8A729D365755C2C61090EA8B8A2014E593E35279969BF76FA01D72EBA17B40D0B91F4859AB16AB588E9B3338667C388AF20F898D2AB978943FE3C9682F69CDD714BDAA158E1AC00EC436097F03A96898F0336F3E82ED9BC73753D49DEFC4AA18D22918F1C13D101486947ACDE51EDE7C0F92101914411D472A6F1761D8BCAA6615292E1DE53D2FC7AB55BA1F70CFF4F53A5F4793644FFC64685C5F4A024764E9205004D60364D8B020111"
+		  updater.ServerPublicRSAKey = "30820120300D06092A864886F70D01010105000382010D003082010802820101009F46055E8FB234E8D9AF06D6A6FE674BF4DF8AD964B96D226D2C24943F31425FC4C3B2393B4B6E101B3A9081C35CFAED49D539DCC96CDF9A5E9217EB7FB053463D39C76147925E49015C05A530CC52CDF3CFA25EC773C55862F45041ABA5B626714128B4A71705B34E7567191221A65F7184C2269E43F8A4E5E7D95C57CE612465B51A62532286CBC34230573134EAB67F7E3649EC4E196583AD406BDFB9CDD6D2C444D1666033F38886CA3F1970B9A834C7DF508CDCA66F250997CEC413DCE25AEED7F91A7A6FD6A906307E29A4BB46839D6D541A57F512D5DA5210835DFDEE890D4261AD2446E9CED24C4AF1EF09A6CCB3ACBE90B77C3544F2FF7F5FF3C547020111"
 		  updater.UpdateURL = "http://nspdevelopment.weebly.com/uploads/9/6/9/7/9697054/updateinformation.json"
 		  updater.Execute
 		  

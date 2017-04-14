@@ -1,0 +1,120 @@
+KAJU 8E3760A5611C8A89DF9F018158294B9B83B71B22076FC95E24C9FD30DCCCE6647E1E92A10AEEA9036B77BCA002F7C35CBD6BF6264711718D3CD26D536ED08EF9F10ADE90662FA5F49D2E4DD67A18199A714DEF8DF24ACA769E1E8A45410F95B16CDF976F6DEB7602523DF093CE3007E20D854F7900D1D8A88C143FB2BD5F4A6789A32EE72A44AC077A518958E1792D7A8FE93F8F7779F39117F456BB6109DB82D81E1B6EF3903F00CA652BA697AD9092EB7F95A42E9E4E4B6D5C6C0F746AE3DFF6056C2F2EFC8D93DD4771306D5EA2346914011634EE10D64A1B585CF2D026369DE4682AEDA6B9422BAB8A562F7021337C241B738D7D0CE4D19C2072BE801A69
+[
+  {
+    "AppName":"otis",
+    "ImageURL":"",
+    "MinimumRequiredVersion":"",
+    "ReleaseNotes":"- Eipl Printouts\r     - Final Summary Subtotal now displays pre line item discounts <br />\r     - Final Summary now has a Total discounts section<br />\r     - Final Summary now displays taxe total<br />\r     - Final Summary now displays balance due even when it is 0<br />\r     - Top right corner text is now as follows:<br />\r          - Line 1: Eipl type<br />\r          - Line 2: Event name<br />\r          - Line 3: Eipl Name<br />\r- General<br />\r     - You can now select whether each line item is taxable<br />\r     - Contacts now have a secondary phone line<br />\r     - There is now a color picker for the background color, found in the file menu<br />\r     - There is now a dropdown menu for acount manager<br />\r     - You can now copy/paste eipls<br />\r          - Right click on the eipl in the eipl list that you wish to copy then click copy<br />\r          - Right click on the event you wish to copy it too and click paste<br />\r     - There is now an option to duplicate events in the events menu<br />\r          - This process takes a while on large events, the app will be frozen during that time<br />",
+    "RequiresPayment":false,
+    "UseTransparency":true,
+    "Version":"1.1.0",
+    "MacBinary":{
+      "Hash":"F54C9DD267B1E19907B27C434ED31BE5",
+      "URL":"http://nspdevelopment.weebly.com/uploads/9/6/9/7/9697054/otis.zip"
+    }
+  },
+  {
+    "AppName":"otis",
+    "ImageURL":"",
+    "MinimumRequiredVersion":"",
+    "ReleaseNotes":"- Eipl Printouts\r     - Final Summary Subtotal now displays pre line item discounts <br />\r     - Final Summary now has a Total discounts section<br />\r     - Final Summary now displays taxe total<br />\r     - Final Summary now displays balance due even when it is 0<br />\r     - Top right corner text is now as follows:<br />\r          - Line 1: Eipl type<br />\r          - Line 2: Event name<br />\r          - Line 3: Eipl Name<br />\r- General<br />\r     - You can now select whether each line item is taxable<br />\r     - Contacts now have a secondary phone line<br />\r     - There is now a color picker for the background color, found in the file menu<br />\r     - There is now a dropdown menu for acount manager<br />\r     - You can now copy/paste eipls<br />\r          - Right click on the eipl in the eipl list that you wish to copy then click copy<br />\r          - Right click on the event you wish to copy it too and click paste<br />\r     - There is now an option to duplicate events in the events menu<br />\r          - This process takes a while on large events, the app will be frozen during that time<br />",
+    "RequiresPayment":false,
+    "UseTransparency":true,
+    "Version":"1.1.1",
+    "MacBinary":{
+      "Hash":"F54C9DD267B1E19907B27C434ED31BE5",
+      "URL":"http://nspdevelopment.weebly.com/uploads/9/6/9/7/9697054/otis.zip"
+    }
+  },
+  {
+    "AppName":"otis",
+    "ImageURL":"",
+    "MinimumRequiredVersion":"",
+    "ReleaseNotes":"- Eipl Printouts\r     - Final Summary Subtotal now displays pre line item discounts <br />\r     - Final Summary now has a Total discounts section<br />\r     - Final Summary now displays taxe total<br />\r     - Final Summary now displays balance due even when it is 0<br />\r     - Top right corner text is now as follows:<br />\r          - Line 1: Eipl type<br />\r          - Line 2: Event name<br />\r          - Line 3: Eipl Name<br />\r- General<br />\r     - You can now select whether each line item is taxable<br />\r     - Contacts now have a secondary phone line<br />\r     - There is now a color picker for the background color, found in the file menu<br />\r     - There is now a dropdown menu for acount manager<br />\r     - You can now copy/paste eipls<br />\r          - Right click on the eipl in the eipl list that you wish to copy then click copy<br />\r          - Right click on the event you wish to copy it too and click paste<br />\r     - There is now an option to duplicate events in the events menu<br />\r          - This process takes a while on large events, the app will be frozen during that time<br />",
+    "RequiresPayment":false,
+    "UseTransparency":true,
+    "Version":"1.1.2",
+    "MacBinary":{
+      "Hash":"BFAD3E4A1608F9842FF524124FA185E8",
+      "URL":"http://nspdevelopment.weebly.com/uploads/9/6/9/7/9697054/otis.zip"
+    }
+  },
+  {
+    "AppName":"otis",
+    "ImageURL":"",
+    "MinimumRequiredVersion":"",
+    "ReleaseNotes":"- Eipl Printouts\r     - Final Summary Subtotal now displays pre line item discounts <br />\r     - Final Summary now has a Total discounts section<br />\r     - Final Summary now displays taxe total<br />\r     - Final Summary now displays balance due even when it is 0<br />\r     - Top right corner text is now as follows:<br />\r          - Line 1: Eipl type<br />\r          - Line 2: Event name<br />\r          - Line 3: Eipl Name<br />\r- General<br />\r     - You can now select whether each line item is taxable<br />\r     - Contacts now have a secondary phone line<br />\r     - There is now a color picker for the background color, found in the file menu<br />\r     - There is now a dropdown menu for acount manager<br />\r     - You can now copy/paste eipls<br />\r          - Right click on the eipl in the eipl list that you wish to copy then click copy<br />\r          - Right click on the event you wish to copy it too and click paste<br />\r     - There is now an option to duplicate events in the events menu<br />\r          - This process takes a while on large events, the app will be frozen during that time<br />",
+    "RequiresPayment":false,
+    "UseTransparency":true,
+    "Version":"1.1.3",
+    "MacBinary":{
+      "Hash":"CFE8A9C7EDDC11675812D4361916358A",
+      "URL":"http://nspdevelopment.weebly.com/uploads/9/6/9/7/9697054/otis.zip"
+    }
+  },
+  {
+    "AppName":"otis",
+    "ImageURL":"",
+    "MinimumRequiredVersion":"",
+    "ReleaseNotes":"<b>v1.1.4</b><br />\rEipl Printouts\r<ul>\r<li>Phone number will now print for the venue</li>\r<li>A space has been added between the colon and the $ in the group summaries</li>\r<li>Increased space available to the group summaries</li>\r<li>Fixed bug causing some prices to display only a single digit after the decimal</li>\r</ul>\rUI Changes\r<ul>\r<li>Changed the color of textfields for line items on the estimate/invoice page to white</li>\r<li>Fixed a bug causing group folders to close when hitting enter while viewing an estimate or invoice</li>\r</ul>\r<b>v1.1.3</b><br />\rEipl Printouts<br />\r<ul>\r<li>Final Summary Subtotal now displays pre line item discounts</li>\r<li>Final Summary now has a Total discounts section</li>\r<li>Final Summary now displays taxe total</li>\r<li>Final Summary now displays balance due even when it is 0</li>\r<li>Top right corner text is now as follows:</li>\r<ul>\r<li>Line 1: Eipl type</li>\r<li>Line 2: Event name</li>\r<li>Line 3: Eipl Name</li>\r</ul>\r</ul>\rGeneral<br />\r<ul>\r<li>You can now select whether each line item is taxable</li>\r<li>Contacts now have a secondary phone line</li>\r<li>There is now a color picker for the background color, found in the file menu</li>\r<li>There is now a dropdown menu for acount manager</li>\r<li>You can now copy/paste eipls</li>\r<ul>\r<li>Right click on the eipl in the eipl list that you wish to copy then click copy</li>\r<li>Right click on the event you wish to copy it too and click paste</li>\r</ul>\r<li>There is now an option to duplicate events in the events menu</li>\r<ul>\r<li>This process takes a while on large events, the app will be frozen during that time</li>\r</ul>\r</ul>\r",
+    "RequiresPayment":false,
+    "UseTransparency":true,
+    "Version":"1.1.4",
+    "MacBinary":{
+      "Hash":"A5D8CD78EFC0F6DCED4FAD6C52D316C9",
+      "URL":"http://nspdevelopment.weebly.com/uploads/9/6/9/7/9697054/otis.zip"
+    }
+  },
+  {
+    "AppName":"otis",
+    "ImageURL":"",
+    "MinimumRequiredVersion":"",
+    "ReleaseNotes":"<b>v1.1.4</b><br />\rEipl Printouts\r<ul>\r<li>Phone number will now print for the venue</li>\r<li>A space has been added between the colon and the $ in the group summaries</li>\r<li>Increased space available to the group summaries</li>\r<li>Fixed bug causing some prices to display only a single digit after the decimal</li>\r</ul>\rUI Changes\r<ul>\r<li>Changed the color of textfields for line items on the estimate/invoice page to white</li>\r<li>Fixed a bug causing group folders to close when hitting enter while viewing an estimate or invoice</li>\r</ul>\r<b>v1.1.3</b><br />\rEipl Printouts<br />\r<ul>\r<li>Final Summary Subtotal now displays pre line item discounts</li>\r<li>Final Summary now has a Total discounts section</li>\r<li>Final Summary now displays taxe total</li>\r<li>Final Summary now displays balance due even when it is 0</li>\r<li>Top right corner text is now as follows:</li>\r<ul>\r<li>Line 1: Eipl type</li>\r<li>Line 2: Event name</li>\r<li>Line 3: Eipl Name</li>\r</ul>\r</ul>\rGeneral<br />\r<ul>\r<li>You can now select whether each line item is taxable</li>\r<li>Contacts now have a secondary phone line</li>\r<li>There is now a color picker for the background color, found in the file menu</li>\r<li>There is now a dropdown menu for acount manager</li>\r<li>You can now copy/paste eipls</li>\r<ul>\r<li>Right click on the eipl in the eipl list that you wish to copy then click copy</li>\r<li>Right click on the event you wish to copy it too and click paste</li>\r</ul>\r<li>There is now an option to duplicate events in the events menu</li>\r<ul>\r<li>This process takes a while on large events, the app will be frozen during that time</li>\r</ul>\r</ul>\r",
+    "RequiresPayment":false,
+    "UseTransparency":true,
+    "Version":"1.1.5",
+    "MacBinary":{
+      "Hash":"C8240774EFB486FFBB9145E433D0517E",
+      "URL":"http://nspdevelopment.weebly.com/uploads/9/6/9/7/9697054/otis.zip"
+    }
+  },
+  {
+    "AppName":"otis",
+    "ImageURL":"",
+    "MinimumRequiredVersion":"",
+    "ReleaseNotes":"<b>v1.1.6</b>\rGeneral\r<ul>\r<li>Department name now defaults to \"-\" when adding a new line item</li>\r<li>Fixed bug causing saving of a line item to inventory to not work</li>\r<ul>\r<li>You must have a line item selected for saving to inventory to work</li>\r</ul>\r<li>Fixed bug causing inventory filter to fill with non department names</li>\r<li>Fixed the order of inventory items on pack list page when filtered</li>\r</ul>\r<b>v1.1.4</b><br />\rEipl Printouts\r<ul>\r<li>Phone number will now print for the venue</li>\r<li>A space has been added between the colon and the $ in the group summaries</li>\r<li>Increased space available to the group summaries</li>\r<li>Fixed bug causing some prices to display only a single digit after the decimal</li>\r</ul>\rUI Changes\r<ul>\r<li>Changed the color of textfields for line items on the estimate/invoice page to white</li>\r<li>Fixed a bug causing group folders to close when hitting enter while viewing an estimate or invoice</li>\r</ul>\r<b>v1.1.3</b><br />\rEipl Printouts<br />\r<ul>\r<li>Final Summary Subtotal now displays pre line item discounts</li>\r<li>Final Summary now has a Total discounts section</li>\r<li>Final Summary now displays taxe total</li>\r<li>Final Summary now displays balance due even when it is 0</li>\r<li>Top right corner text is now as follows:</li>\r<ul>\r<li>Line 1: Eipl type</li>\r<li>Line 2: Event name</li>\r<li>Line 3: Eipl Name</li>\r</ul>\r</ul>\rGeneral<br />\r<ul>\r<li>You can now select whether each line item is taxable</li>\r<li>Contacts now have a secondary phone line</li>\r<li>There is now a color picker for the background color, found in the file menu</li>\r<li>There is now a dropdown menu for acount manager</li>\r<li>You can now copy/paste eipls</li>\r<ul>\r<li>Right click on the eipl in the eipl list that you wish to copy then click copy</li>\r<li>Right click on the event you wish to copy it too and click paste</li>\r</ul>\r<li>There is now an option to duplicate events in the events menu</li>\r<ul>\r<li>This process takes a while on large events, the app will be frozen during that time</li>\r</ul>\r</ul>\r",
+    "RequiresPayment":false,
+    "UseTransparency":true,
+    "Version":"1.1.6",
+    "MacBinary":{
+      "Hash":"C8240774EFB486FFBB9145E433D0517E",
+      "URL":"http://nspdevelopment.weebly.com/uploads/9/6/9/7/9697054/otis.zip"
+    }
+  },
+  {
+    "AppName":"otis",
+    "ImageURL":"",
+    "MinimumRequiredVersion":"",
+    "ReleaseNotes":"<b>v1.1.6</b>\rGeneral\r<ul>\r<li>Department name now defaults to \"-\" when adding a new line item</li>\r<li>Fixed bug causing saving of a line item to inventory to not work</li>\r<ul>\r<li>You must have a line item selected for saving to inventory to work</li>\r</ul>\r<li>Fixed bug causing inventory filter to fill with non department names</li>\r<li>Fixed the order of inventory items on pack list page when filtered</li>\r</ul>\r<b>v1.1.4</b><br />\rEipl Printouts\r<ul>\r<li>Phone number will now print for the venue</li>\r<li>A space has been added between the colon and the $ in the group summaries</li>\r<li>Increased space available to the group summaries</li>\r<li>Fixed bug causing some prices to display only a single digit after the decimal</li>\r</ul>\rUI Changes\r<ul>\r<li>Changed the color of textfields for line items on the estimate/invoice page to white</li>\r<li>Fixed a bug causing group folders to close when hitting enter while viewing an estimate or invoice</li>\r</ul>\r<b>v1.1.3</b><br />\rEipl Printouts<br />\r<ul>\r<li>Final Summary Subtotal now displays pre line item discounts</li>\r<li>Final Summary now has a Total discounts section</li>\r<li>Final Summary now displays taxe total</li>\r<li>Final Summary now displays balance due even when it is 0</li>\r<li>Top right corner text is now as follows:</li>\r<ul>\r<li>Line 1: Eipl type</li>\r<li>Line 2: Event name</li>\r<li>Line 3: Eipl Name</li>\r</ul>\r</ul>\rGeneral<br />\r<ul>\r<li>You can now select whether each line item is taxable</li>\r<li>Contacts now have a secondary phone line</li>\r<li>There is now a color picker for the background color, found in the file menu</li>\r<li>There is now a dropdown menu for acount manager</li>\r<li>You can now copy/paste eipls</li>\r<ul>\r<li>Right click on the eipl in the eipl list that you wish to copy then click copy</li>\r<li>Right click on the event you wish to copy it too and click paste</li>\r</ul>\r<li>There is now an option to duplicate events in the events menu</li>\r<ul>\r<li>This process takes a while on large events, the app will be frozen during that time</li>\r</ul>\r</ul>\r",
+    "RequiresPayment":false,
+    "UseTransparency":true,
+    "Version":"1.1.7",
+    "MacBinary":{
+      "Hash":"9AC6AA042A5B5F19B0E7AF5562C3D9DF",
+      "URL":"http://nspdevelopment.weebly.com/uploads/9/6/9/7/9697054/otis.zip"
+    }
+  },
+  {
+    "AppName":"otis",
+    "ImageURL":"",
+    "MinimumRequiredVersion":"",
+    "ReleaseNotes":"<b>v1.1.8</b>\rGeneral\r<ul>\r<li>EIPL Inventory now does not refresh when the line item list refreshes</li>\r<li>Fixed a bug causing filtering problems</li>\r<li>Fixed tab order for contact window</li>\r</ul>\r<b>v1.1.6</b>\rGeneral\r<ul>\r<li>Department name now defaults to \"-\" when adding a new line item</li>\r<li>Fixed bug causing saving of a line item to inventory to not work</li>\r<ul>\r<li>You must have a line item selected for saving to inventory to work</li>\r</ul>\r<li>Fixed bug causing inventory filter to fill with non department names</li>\r<li>Fixed the order of inventory items on pack list page when filtered</li>\r</ul>\r<b>v1.1.4</b><br />\rEipl Printouts\r<ul>\r<li>Phone number will now print for the venue</li>\r<li>A space has been added between the colon and the $ in the group summaries</li>\r<li>Increased space available to the group summaries</li>\r<li>Fixed bug causing some prices to display only a single digit after the decimal</li>\r</ul>\rUI Changes\r<ul>\r<li>Changed the color of textfields for line items on the estimate/invoice page to white</li>\r<li>Fixed a bug causing group folders to close when hitting enter while viewing an estimate or invoice</li>\r</ul>\r<b>v1.1.3</b><br />\rEipl Printouts<br />\r<ul>\r<li>Final Summary Subtotal now displays pre line item discounts</li>\r<li>Final Summary now has a Total discounts section</li>\r<li>Final Summary now displays taxe total</li>\r<li>Final Summary now displays balance due even when it is 0</li>\r<li>Top right corner text is now as follows:</li>\r<ul>\r<li>Line 1: Eipl type</li>\r<li>Line 2: Event name</li>\r<li>Line 3: Eipl Name</li>\r</ul>\r</ul>\rGeneral<br />\r<ul>\r<li>You can now select whether each line item is taxable</li>\r<li>Contacts now have a secondary phone line</li>\r<li>There is now a color picker for the background color, found in the file menu</li>\r<li>There is now a dropdown menu for acount manager</li>\r<li>You can now copy/paste eipls</li>\r<ul>\r<li>Right click on the eipl in the eipl list that you wish to copy then click copy</li>\r<li>Right click on the event you wish to copy it too and click paste</li>\r</ul>\r<li>There is now an option to duplicate events in the events menu</li>\r<ul>\r<li>This process takes a while on large events, the app will be frozen during that time</li>\r</ul>\r</ul>\r",
+    "RequiresPayment":false,
+    "UseTransparency":true,
+    "Version":"1.1.8",
+    "MacBinary":{
+      "Hash":"1506F2714DA23A7ECCDF75424BB0FCAF",
+      "URL":"http://nspdevelopment.weebly.com/uploads/9/6/9/7/9697054/otis.zip"
+    }
+  }
+]

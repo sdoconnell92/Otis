@@ -5,7 +5,8 @@ Inherits Listbox
 		Sub CellAction(row As Integer, column As Integer)
 		  If me.ColumnType( column ) = 2 Then
 		    saveValue( row, column )
-		    loadMe
+		    loadMe(true)
+		    'refreshmenow
 		  End If
 		End Sub
 	#tag EndEvent
@@ -1250,6 +1251,11 @@ Inherits Listbox
 		  
 		End Sub
 	#tag EndMethod
+
+
+	#tag Hook, Flags = &h0
+		Event refreshmenow()
+	#tag EndHook
 
 
 	#tag Property, Flags = &h0

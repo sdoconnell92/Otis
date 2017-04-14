@@ -87,7 +87,7 @@ Protected Class drawEstimate
 		    
 		    
 		    'Phone
-		    'infoDictVenue(6) = MainWindow.mdLabel_Venue_Phone.Text
+		    infoDictVenue(4) = MainWindow.mdLabel_Venue_Phone.Text
 		    
 		    'Email
 		    'infoDictVenue(7) = MainWindow.mdLabel_Venue_Email.Text
@@ -394,7 +394,7 @@ Protected Class drawEstimate
 		  dim spaceFromBaseLine as integer = 0 * masterMult
 		  
 		  // Set the info to be drawn
-		  info() = Array( MainWindow.ComboBox_EIPL_TypeSelector.Text, MainWindow.Label_EIPL_Number.Text, MainWindow.TextField_Event_Name.Text )
+		  info() = Array( MainWindow.ComboBox_EIPL_TypeSelector.Text, MainWindow.TextField_Event_Name.Text, MainWindow.TextField_EIPLName.Text )
 		  
 		  g.TextSize = textSizes(0)
 		  y = margin + g.TextHeight + g.TextHeight
@@ -564,6 +564,7 @@ Protected Class drawEstimate
 		  dim theDataDict() as Dictionary
 		  dim estimateInfoBoxText as String
 		  dim invoiceInfoBoxText as String
+		  dim discount_total_final as integer
 		  
 		  dim groupSummaryDone as Boolean
 		  dim finalSummaryDone as Boolean
@@ -606,7 +607,7 @@ Protected Class drawEstimate
 		    sourceListbox = MainWindow.Listbox_LineItems
 		    
 		    headers()  = Array ( "Name","Cat","SubCat", "Time", "Rate", "QTY", "Price", "DiscSum", "DiscPerc", "Total"  )
-		    columns()  = Array ( 0,10,11,2,3,4,5,6,7,8 )
+		    columns()  = Array ( 0,11,12,2,3,4,5,6,7,8 )
 		    columnWidths()  = Array ( 23,15,15,5,6,5,8,5,5, 13 )
 		    justification()  = Array( "Left", "Center","Center", "Center", "Center", "Center", "Center", "Center", "Center", "Right" )
 		    showColumn()  = Array( True, True, True, True, True, True, True, True, True, True )
@@ -625,7 +626,7 @@ Protected Class drawEstimate
 		  
 		  dim spaceAboveLine as integer = 1 * MasterMult
 		  dim spaceBelowLine as integer = 1 * MasterMult
-		  dim summaryXValue as integer = 350 * MasterMult
+		  dim summaryXValue as integer = 320 * MasterMult
 		  
 		  If Type = "Estimate" Or Type = "Invoice" Then
 		    // Check for discounts
@@ -663,30 +664,33 @@ Protected Class drawEstimate
 		    summaryDict(2).Value("Field Name" ) = "grandtotal_"
 		    
 		    If Type = "Invoice" Then
-		      redim finalSummaryDict(5) 
+		      redim finalSummaryDict(6) 
 		    ElseIf Type = "Estimate" Then
-		      ReDim finalSummaryDict(3)
+		      ReDim finalSummaryDict(4)
 		    End If
 		    finalSummaryDict(0) = new Dictionary
 		    finalSummaryDict(0).Value("Header") = "SubTotal"
 		    finalSummaryDict(0).Value("Field Name") = "subtotal_"
 		    finalSummaryDict(1) = new Dictionary
-		    finalSummaryDict(1).Value("Header") = "Discount"
-		    finalSummaryDict(1).Value("Field Name" ) = "discount_"
+		    finalSummaryDict(1).Value("Header") = "Discount Total"
+		    finalSummaryDict(1).Value("Field Name") = "the_discounttotal"
 		    finalSummaryDict(2) = new Dictionary
-		    finalSummaryDict(2).Value("Header") = "Sales Tax"
-		    finalSummaryDict(2).Value("Field Name" ) = "taxtotal_"
+		    finalSummaryDict(2).Value("Header") = "Discount"
+		    finalSummaryDict(2).Value("Field Name" ) = "discount_"
 		    finalSummaryDict(3) = new Dictionary
-		    finalSummaryDict(3).Value("Header") = "GrandTotal"
-		    finalSummaryDict(3).Value("Field Name" ) = "grandtotal_"
+		    finalSummaryDict(3).Value("Header") = "Sales Tax"
+		    finalSummaryDict(3).Value("Field Name" ) = "taxtotal_"
+		    finalSummaryDict(4) = new Dictionary
+		    finalSummaryDict(4).Value("Header") = "GrandTotal"
+		    finalSummaryDict(4).Value("Field Name" ) = "grandtotal_"
 		    If Type = "Invoice" Then
 		      'only apply to invoices
-		      finalSummaryDict(4) = new Dictionary
-		      finalSummaryDict(4).Value("Header") = "Applied Payments"
-		      finalSummaryDict(4).Value("Field Name" ) = "totalpaid_"
 		      finalSummaryDict(5) = new Dictionary
-		      finalSummaryDict(5).Value("Header") = "Balance Due"
-		      finalSummaryDict(5).Value("Field Name" ) = "balance_"
+		      finalSummaryDict(5).Value("Header") = "Applied Payments"
+		      finalSummaryDict(5).Value("Field Name" ) = "totalpaid_"
+		      finalSummaryDict(6) = new Dictionary
+		      finalSummaryDict(6).Value("Header") = "Balance Due"
+		      finalSummaryDict(6).Value("Field Name" ) = "balance_"
 		    End If
 		    
 		    If Type = "Estimate" Then
@@ -830,15 +834,39 @@ Protected Class drawEstimate
 		            logErrorMessage( 4, "DBase", otis.db.ErrorMessage )
 		          End If
 		          
+		          dim discountpercent as double = 0
+		          dim discountpercentstring as string  
+		          dim discountamount1 as integer = 0
+		          
 		          // Check if there is a discount
 		          If theRecordSet.Field( "amount_" ).IntegerValue <> 0 Then
 		            showSubtotal = True
-		            showDiscount =True
+		            showDiscount = True
+		            
+		            discountamount1 = theRecordSet.Field("amount_").IntegerValue
+		            discountpercent = theRecordSet.Field("amount_").IntegerValue / theRecordSet.Field("subtotal_").IntegerValue 
+		            discountpercent = discountpercent * 100
+		            discountpercentstring = discountpercent.ToText
+		            discountpercentstring = FORMAT(discountpercent,"##0.00")
+		            If val(Right(discountpercentstring,2)) = 0 Then
+		              discountpercentstring = FORMAT(discountpercent,"##0")
+		            End If
+		            
+		            
+		            
+		            // Add up the discounts for the finalSummary
+		            'discount_total_final = discount_total_final + theRecordSet.Field("amount_").IntegerValue
+		            
 		          End If
 		          
 		          // Extract the information from the RecordSet
 		          ReDim info(1)
-		          info(0) = groupName + " " + summaryDict( summaryIndex ).Value( "Header" ) + ": "
+		          info(0) = groupName + " " + summaryDict( summaryIndex ).Value( "Header" )
+		          If  summaryDict( summaryIndex ).Value( "Header" ) = "Discount" Then
+		            info(0) = info(0) + "(" + discountpercentstring + "%): "
+		          Else
+		            info(0) = info(0) + ": "
+		          End If
 		          s4 = theRecordSet.Field( summaryDict( summaryIndex ).Value( "Field Name" ) )
 		          n4 = val( s4 )
 		          info(1) = str( formatMyValue( n4 , 1 ) )
@@ -870,7 +898,49 @@ Protected Class drawEstimate
 		          // Extract the information from the RecordSet
 		          ReDim info(1)
 		          info(0) = finalSummaryDict( finalSummaryIndex ).Value( "Header" ) + ": "
-		          s4 = theRecordSet.Field( finalSummaryDict( finalSummaryIndex ).Value( "Field Name" ) )
+		          dim s11 as string = finalSummaryDict( finalSummaryIndex ).Value( "Field Name" )
+		          If s11.InStr("the_") <> 0 Then
+		            ' the string was found
+		            
+		            dim ps2 as PreparedSQLStatement
+		            dim sql2 as string
+		            sql2 = "Select Sum(amount_) From discounts_ Where fkeipl = '" + eiplPKID + "';"
+		            ps2 = otis.db.Prepare(sql2)
+		            dim rs3 as RecordSet
+		            rs3 = ps2.SQLSelect
+		            if otis.db.error then
+		              logErrorMessage(4,"DBase",otis.db.errormessage)
+		            End If
+		            dim n54 as integer = rs3.Field("Sum").IntegerValue
+		            s4 = n54.ToText
+		            
+		            's4 = discount_total_final.ToText
+		            
+		          ElseIf s11.InStr("subtotal")  <> 0 Then
+		            ' we are on the subtotal
+		            
+		            dim ps3 as PreparedSQLStatement
+		            dim sql3 as string
+		            sql3 = "Select Sum(subtotal_) From discounts_ Where fkeipl = '" + eiplPKID + "';"
+		            ps3 = otis.db.prepare(sql3)
+		            dim rs4 as RecordSet
+		            rs4 = ps3.SQLSelect
+		            If otis.db.error Then
+		              logErrorMessage(4,"DBase",otis.db.errormessage)
+		            End If
+		            
+		            dim n345 as integer = rs4.Field("Sum").IntegerValue
+		            s4 = n345.ToText
+		            
+		            'ElseIf s11.InStr("taxtotal") <> 0 Then
+		            ' we are on tax total
+		            
+		            'dim ps4 as PostgreSQLPreparedStatement
+		            'dim sql9 as string
+		            'sql9 = "Select Sum(
+		          Else
+		            s4 = theRecordSet.Field( finalSummaryDict( finalSummaryIndex ).Value( "Field Name" ) )
+		          End If
 		          n4 = val( s4 )
 		          If n4 = 0 Then
 		            finalSummaryLineisZero = True
@@ -984,7 +1054,7 @@ Protected Class drawEstimate
 		        End If
 		        
 		        If Type = "Estimate" Or Type = "Invoice" Then
-		          If Not finalSummaryLineisZero Then
+		          If Not finalSummaryLineisZero Or finalSummaryDict(finalSummaryIndex).Value("Field Name") = "balance_" Then
 		            // Draw the line
 		            g.Bold = True
 		            drawLine( x - 100 * MasterMult, y, info(), Array(50,50), Array( "Right", "Left" ), Array( True, True ) )

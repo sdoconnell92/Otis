@@ -44,6 +44,7 @@ Begin sdoWindow Window_Inventory
       Scope           =   0
       TabIndex        =   0
       TabPanelIndex   =   0
+      TabStop         =   True
       Top             =   0
       Value           =   0
       Visible         =   True
@@ -617,6 +618,7 @@ Begin sdoWindow Window_Inventory
       End
    End
    Begin Timer Timer1
+      Enabled         =   True
       Index           =   -2147483648
       LockedInPosition=   False
       Mode            =   2

@@ -1,6 +1,42 @@
 #tag Module
 Protected Module myData
 	#tag Method, Flags = &h0
+		Function ensure2decimelplace(sString as String) As String
+		  dim returnString as string
+		  
+		  // Check if there is a decimel in it
+		  If sString.InStr(".") > 0 Then
+		    ' there is a decimel
+		    
+		    // Check how many places there are after the decimel
+		    dim placesafter as integer
+		    dim decimelposition as integer
+		    dim theLength as integer
+		    
+		    decimelposition = sString.InStr(".")
+		    theLength = Len(sString)
+		    placesafter = theLength - decimelposition
+		    
+		    Select Case placesafter
+		    Case 1
+		      returnString = sString + "0"
+		      Return returnString
+		    Case 2
+		      Return sString
+		    End Select
+		    
+		  Else
+		    ' there is no decimel
+		    
+		    // Add a decimel and 2 zeros and send it back
+		    returnString = sString + ".00"
+		    Return returnString
+		    
+		  End If
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function formatMyValue(pValue as variant, pmdFormat as integer) As Variant
 		  '0 = nothing
 		  '1 = dollar
@@ -35,6 +71,8 @@ Protected Module myData
 		    
 		    // Adding dollar sign
 		    theString = "$" + theString
+		    
+		    theString = ensure2decimelplace(str(theString))
 		    
 		  Case 2  'Percent
 		    // Converts percent amount from thousanths place
@@ -148,6 +186,7 @@ Protected Module myData
 		    theAmount = Floor( Val( theString ) * 100 )
 		    
 		    theString =  theAmount
+		    
 		    
 		    
 		  Case 2  'Percent
