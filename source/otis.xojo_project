@@ -73,6 +73,7 @@ Folder=Kaju Classes;Add-Ons/Kaju/Kaju Classes;&h39878FFF;&h8C66FFF;false
 Module=notifications;Otis_Core/Core_Modules/notifications.xojo_code;&h1A07A7FF;&h189587FF;false
 Window=Window_Price_Discrepency;Otis_Core/Core_Windows/Window_Price_Discrepency.xojo_window;&h4255AFFF;&h2E771FFF;false
 MultiImage=img0;Icons/img0.xojo_image;&h9B5AFFF;&h7F423FFF;false
+Window=winDeleteItem;Windows/winDeleteItem.xojo_window;&h3240B7FF;&h564F5FFF;false
 DefaultWindow=MainWindow
 AppMenuBar=MainMenuBar
 MajorVersion=1

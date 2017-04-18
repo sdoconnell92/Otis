@@ -45,7 +45,7 @@ Begin sdoWindow MainWindow
       TabIndex        =   1
       TabPanelIndex   =   0
       Top             =   0
-      Value           =   2
+      Value           =   3
       Visible         =   True
       Width           =   1182
       Begin Listbox eventList_Listbox
@@ -7625,7 +7625,7 @@ Begin sdoWindow MainWindow
                Scope           =   0
                ScrollbarHorizontal=   False
                ScrollBarVertical=   True
-               SelectionType   =   0
+               SelectionType   =   1
                TabIndex        =   4
                TabPanelIndex   =   1
                TabStop         =   True
@@ -10048,6 +10048,15 @@ End
 		Function ConstructContextualMenu(base as MenuItem, x as Integer, y as Integer) As Boolean
 		  
 		  // Add some items
+		  base.Append( new MenuItem( "Copy" ) )
+		  dim pastitem as New MenuItem("Paste")
+		  If app.sLineItemstoCopy.Ubound <> -1 Then
+		    pastitem.Enabled = True
+		  Else
+		    pastitem.Enabled = False
+		  End If
+		  base.Append(pastitem)
+		  base.Append( new MenuItem( MenuItem.TextSeparator ) )
 		  base.Append( new MenuItem( "Delete" ) )
 		  
 		  Return True
@@ -10055,15 +10064,27 @@ End
 	#tag EndEvent
 	#tag Event
 		Function ContextualMenuAction(hitItem as MenuItem) As Boolean
-		  
+		  break
 		  if hitItem <> Nil then
-		    if hitItem.Text = "Delete" then
+		    Select Case hitItem.Text
+		    Case "Delete"
 		      me.deleteRow
 		      
 		      me.loadMe(true)
 		      
-		    end if
+		    Case "Copy"
+		      
+		      me.copyLIs
+		      
+		    Case "Paste"
+		      
+		      me.PasteLIs(EIPL.pkid)
+		      
+		    End Select
+		    
 		  end if
+		  
+		  
 		End Function
 	#tag EndEvent
 #tag EndEvents

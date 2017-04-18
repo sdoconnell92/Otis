@@ -141,69 +141,111 @@ Inherits Listbox
 
 	#tag Method, Flags = &h0
 		Sub deleteRow()
-		  dim theSQL as string
-		  dim ps as PostgreSQLPreparedStatement
-		  dim thepkid as string
-		  dim theRowTag as mdRowTag
-		  dim theNextRowpkid as string
-		  dim pkidlist() as string
-		  dim n1, n2 as integer
-		  dim fin as Boolean
+		  dim SelectedRowTags() as mdRowTag
+		  dim YesOrNoAll as string
 		  
+		  SelectedRowTags() = me.getSelectedRowTags
 		  
-		  // Ask User if they are sure
-		  Dim n As Integer
-		  
-		  n = MsgBox("Are you sure you want to delete " + me.Cell( me.ListIndex, 0 ) + "?", 36)
-		  
-		  If n = 6 Then
-		    // user pressed Yes
+		  If SelectedRowTags.Ubound <> -1 Then
 		    
-		    // Get the Rowtag
-		    theRowTag = me.RowTag( me.ListIndex )
-		    If me.RowIsFolder(me.ListIndex) Then
-		      thepkid = "'" + join( theRowTag.thepkids(), "','" ) + "'"
-		      pkidlist = theRowTag.thepkids()
-		    Else
-		      thepkid = "'" + theRowTag.pkid + "'"
-		      redim pkidlist(-1)
-		      pkidlist.Append(thepkid)
+		    For Each oRowTag as mdRowTag In SelectedRowTags
 		      
-		      // Change the listindex
-		      If me.ListIndex = me.ListCount - 1 Then
-		        me.ListIndex = me.ListIndex - 1
+		      dim deleteMe as Boolean
+		      
+		      If YesOrNoAll = "" Then
+		        dim modWindow as New winDeleteItem
+		        modWindow.UserMessage = "Are you sure you want to delete " + me.Cell( me.ListIndex, 0 ) + "?"
+		        modWindow.MyShowModal
+		        
+		        If modWindow.YesOrNo = "Yes" THen
+		          deleteMe = True
+		          If modWindow.ApplyToAll Then
+		            YesOrNoAll = "Yes"
+		          End If
+		        Else
+		          deleteMe = False
+		          If modWindow.ApplyToAll Then
+		            YesOrNoAll = "No"
+		          End If
+		        End If
+		        
 		      Else
-		        me.ListIndex = me.ListIndex + 1
+		        If YesOrNoAll = "Yes" Then
+		          deleteMe = True
+		        Else
+		          deleteMe = False
+		        End If
+		        
 		      End If
 		      
-		    End If
-		    
-		    // Build the SQL
-		    dim s1, s2() as string
-		    s1 = mdTableName
-		    s2() = Split( s1, "," )
-		    If s2.Ubound > 0 Then
-		      s1 = s2(0)
-		    Else
-		      s1 = mdTableName
-		    End If
-		    theSQL = "Delete From " + s1 + " Where pkid in (" + thepkid + ") ; "
-		    
-		    ps = otis.db.Prepare( theSQL )
-		    //ps.Bind( 0, pkidlist )
-		    ps.SQLExecute
-		    if otis.db.error then
-		      MsgBox( otis.db.errormessage)
-		    End If
-		    
-		    loadMe( True )
-		    
-		    //MsgBox( "Delete Successful" )
-		    
-		  ElseIf n = 7 Then
-		    // user pressed No
+		      If deleteMe Then
+		        
+		        dim theSQL as string
+		        dim ps as PostgreSQLPreparedStatement
+		        dim thepkid, pkidlist() as string
+		        
+		        // Check if this is a folder
+		        If oRowTag.isFolder Then
+		          thepkid = "'" + join( oRowTag.thepkids(), "','" ) + "'"
+		          pkidlist = oRowTag.thepkids()
+		        Else
+		          thepkid = "'" + oRowTag.pkid + "'"
+		          redim pkidlist(-1)
+		          pkidlist.Append(thepkid)
+		          
+		          // Change the listindex
+		          If me.ListIndex = me.ListCount - 1 Then
+		            me.ListIndex = me.ListIndex - 1
+		          Else
+		            me.ListIndex = me.ListIndex + 1
+		          End If
+		        End If
+		        
+		        // Build the SQL
+		        dim s1, s2() as string
+		        s1 = mdTableName
+		        s2() = Split( s1, "," )
+		        If s2.Ubound > 0 Then
+		          s1 = s2(0)
+		        Else
+		          s1 = mdTableName
+		        End If
+		        theSQL = "Delete From " + s1 + " Where pkid in (" + thepkid + ") ; "
+		        
+		        ps = otis.db.Prepare( theSQL )
+		        //ps.Bind( 0, pkidlist )
+		        ps.SQLExecute
+		        if otis.db.error then
+		          MsgBox( otis.db.errormessage)
+		        End If
+		        
+		      End If
+		      
+		    Next
 		    
 		  End If
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
 		  
 		  
 		End Sub
