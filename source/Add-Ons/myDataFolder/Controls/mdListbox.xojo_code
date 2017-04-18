@@ -116,6 +116,30 @@ Inherits Listbox
 
 
 	#tag Method, Flags = &h0
+		Sub copyLIs()
+		  dim SelectedRowTags() as mdRowTag
+		  SelectedRowTags() = me.getSelectedRowTags
+		  
+		  If SelectedRowTags.Ubound <> -1 Then
+		    
+		    Redim App.sLineItemstoCopy(-1)
+		    
+		    For Each oRowTag as mdRowTag In SelectedRowTags()
+		      
+		      dim spkid as String
+		      spkid = oRowTag.pkid
+		      
+		      If spkid <> "" Then
+		        App.sLineItemstoCopy.Append(spkid)
+		      End If
+		      
+		    Next
+		    
+		  End If
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub deleteRow()
 		  dim theSQL as string
 		  dim ps as PostgreSQLPreparedStatement
@@ -268,6 +292,22 @@ Inherits Listbox
 		  
 		  
 		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function getSelectedRowTags() As mdRowTag()
+		  dim selectedRowTags() as mdRowTag
+		  
+		  For i1 as integer = 0 To me.ListCount - 1
+		    
+		    If me.Selected(i1) Then
+		      selectedRowTags.Append( me.RowTag(i1) )
+		    End If
+		    
+		  Next
+		  
+		  Return selectedRowTags
+		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
@@ -729,6 +769,42 @@ Inherits Listbox
 		    me.RowIsFolder( i1 ) = True
 		    
 		  Next
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub PasteLIs(DestinationEIPLpkid as String)
+		  
+		  
+		  For Each spkid as String In App.sLineItemstoCopy
+		    
+		    // Build the SQL
+		    dim s1, s2(), theSQL as string
+		    dim ps as PostgreSQLPreparedStatement
+		    s1 = mdTableName
+		    s2() = Split( s1, "," )
+		    If s2.Ubound > 0 Then
+		      s1 = s2(0)
+		    Else
+		      s1 = mdTableName
+		    End If
+		    
+		    dim sFields as string
+		    sFields = "name_, manufacturer, model, department, category, subcategory, description, price, quantity_, fkinventory, type_, note_, rate_, discounttype_, total_, time_, discount_, discountperc_, discountamount_, taxable_, taxtotal_, quantity"
+		    theSQL = "Insert Into " + s1 + "( fkeipl, " + sFields + ") Select '" + DestinationEIPLpkid + "', " + sFields + " From " + s1 + " Where pkid = '" + spkid + "' ;"
+		    
+		    ps = otis.db.Prepare( theSQL )
+		    //ps.Bind( 0, pkidlist )
+		    ps.SQLExecute
+		    if otis.db.error then
+		      MsgBox( otis.db.errormessage)
+		    End If
+		    
+		    
+		  Next
+		  
+		  loadMe( True )
+		  
 		End Sub
 	#tag EndMethod
 

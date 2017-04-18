@@ -1035,6 +1035,7 @@ Protected Module EIPL
 		  n1 = MainWindow.findControlByName( "ComboBox_EIPL_TypeSelector" )
 		  theControl = MainWindow.Control( n1 )
 		  setControlpkid( theControl, thePKID )
+		  EIPL.pkid = thePKID
 		  
 		  // Grab the EIPL type, tells us whether this is an Estimate Invoice or Pack List
 		  'first we must load the type control

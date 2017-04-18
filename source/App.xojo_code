@@ -120,6 +120,10 @@ Inherits Application
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
+		sLineItemstoCopy() As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
 		UpdateInitiater As Kaju.UpdateInitiater
 	#tag EndProperty
 
