@@ -119,7 +119,7 @@ Begin sdoWindow Window_Contact
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &cFFFF00FF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -161,7 +161,7 @@ Begin sdoWindow Window_Contact
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &cFFFF00FF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -233,6 +233,7 @@ Begin sdoWindow Window_Contact
       Selectable      =   False
       TabIndex        =   18
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "First Name"
       TextAlign       =   2
       TextColor       =   &c00000000
@@ -267,6 +268,7 @@ Begin sdoWindow Window_Contact
       Selectable      =   False
       TabIndex        =   19
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Last Name"
       TextAlign       =   2
       TextColor       =   &c00000000
@@ -284,7 +286,7 @@ Begin sdoWindow Window_Contact
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &cFFFF00FF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -356,6 +358,7 @@ Begin sdoWindow Window_Contact
       Selectable      =   False
       TabIndex        =   20
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Job Title"
       TextAlign       =   2
       TextColor       =   &c00000000
@@ -373,7 +376,7 @@ Begin sdoWindow Window_Contact
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &cFFFF00FF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -445,6 +448,7 @@ Begin sdoWindow Window_Contact
       Selectable      =   False
       TabIndex        =   21
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Company"
       TextAlign       =   2
       TextColor       =   &c00000000
@@ -462,7 +466,7 @@ Begin sdoWindow Window_Contact
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &cFFFF00FF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -534,6 +538,7 @@ Begin sdoWindow Window_Contact
       Selectable      =   False
       TabIndex        =   22
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Email"
       TextAlign       =   2
       TextColor       =   &c00000000
@@ -551,7 +556,7 @@ Begin sdoWindow Window_Contact
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &cFFFF00FF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -623,6 +628,7 @@ Begin sdoWindow Window_Contact
       Selectable      =   False
       TabIndex        =   23
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Phone"
       TextAlign       =   2
       TextColor       =   &c00000000
@@ -640,7 +646,7 @@ Begin sdoWindow Window_Contact
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &cFFFF00FF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -712,6 +718,7 @@ Begin sdoWindow Window_Contact
       Selectable      =   False
       TabIndex        =   14
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Address Line 1"
       TextAlign       =   2
       TextColor       =   &c00000000
@@ -729,7 +736,7 @@ Begin sdoWindow Window_Contact
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &cFFFF00FF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -801,6 +808,7 @@ Begin sdoWindow Window_Contact
       Selectable      =   False
       TabIndex        =   15
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Address Line 2"
       TextAlign       =   2
       TextColor       =   &c00000000
@@ -818,7 +826,7 @@ Begin sdoWindow Window_Contact
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &cFFFF00FF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -890,6 +898,7 @@ Begin sdoWindow Window_Contact
       Selectable      =   False
       TabIndex        =   24
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "City"
       TextAlign       =   2
       TextColor       =   &c00000000
@@ -907,7 +916,7 @@ Begin sdoWindow Window_Contact
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &cFFFF00FF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -979,6 +988,7 @@ Begin sdoWindow Window_Contact
       Selectable      =   False
       TabIndex        =   25
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "State"
       TextAlign       =   2
       TextColor       =   &c00000000
@@ -996,7 +1006,7 @@ Begin sdoWindow Window_Contact
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &cFFFF00FF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -1068,6 +1078,7 @@ Begin sdoWindow Window_Contact
       Selectable      =   False
       TabIndex        =   26
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Zip"
       TextAlign       =   2
       TextColor       =   &c00000000
@@ -1085,7 +1096,7 @@ Begin sdoWindow Window_Contact
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &cFFFF00FF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -1157,6 +1168,7 @@ Begin sdoWindow Window_Contact
       Selectable      =   False
       TabIndex        =   27
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Country"
       TextAlign       =   2
       TextColor       =   &c00000000
@@ -1174,7 +1186,7 @@ Begin sdoWindow Window_Contact
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &cFFFF00FF
       Bold            =   False
       Border          =   True
       CueText         =   ""
@@ -1339,6 +1351,7 @@ Begin sdoWindow Window_Contact
       Selectable      =   False
       TabIndex        =   31
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Phone 2"
       TextAlign       =   2
       TextColor       =   &c00000000
@@ -1356,7 +1369,7 @@ Begin sdoWindow Window_Contact
       Alignment       =   0
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      BackColor       =   &cFFFF00FF
       Bold            =   False
       Border          =   True
       CueText         =   ""

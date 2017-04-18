@@ -2236,7 +2236,7 @@ End
 #tag EndEvents
 #tag Events CalendarDateButton
 	#tag Event
-		Sub Action()
+		Sub Action(index as Integer)
 		  #Pragma Unused Index
 		  
 		  //day has been chosen
