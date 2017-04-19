@@ -470,7 +470,7 @@ Protected Class drawEstimate
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Sub drawLine(x as integer, y as integer, pInfo() as string, pColumnWidths() as integer, pJustification() as String, pShowColumn() as Boolean)
+		Private Sub drawLine(x as integer, y as integer, pInfo() as string, pColumnWidths() as integer, pJustification() as String, pShowColumn() as Boolean, bDrawLine as boolean = False)
 		  dim wrapWidth as integer
 		  dim boxWidth as integer
 		  dim n1, n2, n3, n4 as integer
@@ -486,6 +486,23 @@ Protected Class drawEstimate
 		  
 		  // Check to make sure we have info
 		  If pInfo.Ubound <> -1 Then
+		    
+		    If bDrawLine Then
+		      If Type = "Pack List" Then
+		        if evenorno Then
+		          g.ForeColor = RGB(180,180,180)
+		        Else
+		          g.ForeColor = RGB(220,220,220)
+		        End If
+		        g.DrawLine(x,y, x + pageDimentions(0) - margin * 2, y)
+		        g.ForeColor = RGB(0,0,0)
+		        If evenorno Then
+		          evenorno = False
+		        Else
+		          evenorno = True
+		        End If
+		      End If
+		    End If
 		    
 		    // Loop through each column of info
 		    For i1 as integer = 0 To pInfo.Ubound
@@ -538,7 +555,6 @@ Protected Class drawEstimate
 		      x = x + boxWidth
 		      
 		    Next
-		    
 		  End If
 		End Sub
 	#tag EndMethod
@@ -962,20 +978,20 @@ Protected Class drawEstimate
 		        
 		        // Draw the line
 		        g.Bold = True
-		        drawLine( x + 10, y, info(), columnWidths(), justification(), showColumn() )
+		        drawLine( x + 10, y, info(), columnWidths(), justification(), showColumn(), False )
 		        g.Bold = False
 		        
 		      ElseIf lineType = "Group Header" Then
 		        
 		        // Draw the line
 		        g.Bold = True
-		        drawLine( x, y, info(), Array(100), Array("Left"), Array( True ) )
+		        drawLine( x, y, info(), Array(100), Array("Left"), Array( True ), False )
 		        g.Bold = False
 		        
 		      ElseIf lineType = "Line Item" Then
 		        
 		        // Draw the line
-		        drawLine( x + 10 * MasterMult, y, info(), columnWidths(), justification(), showColumn() )
+		        drawLine( x + 10 * MasterMult, y, info(), columnWidths(), justification(), showColumn(), True )
 		        
 		      ElseIf lineType = "Group Summary" Then
 		        If Type = "Estimate" Or Type = "Invoice" Then
@@ -1587,6 +1603,10 @@ Protected Class drawEstimate
 
 	#tag Property, Flags = &h21
 		Private dataDict() As Dictionary
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private evenorno As Boolean
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
