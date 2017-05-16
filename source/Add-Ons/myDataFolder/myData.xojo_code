@@ -51,7 +51,6 @@ Protected Module myData
 		  dim theDate as new Date
 		  dim converted as Boolean
 		  
-		  theDate.GMTOffset = -6
 		  theValue = pValue
 		  
 		  Select Case pmdformat
@@ -91,12 +90,12 @@ Protected Module myData
 		    #Pragma BreakOnExceptions Off
 		    
 		    // Converts to time from sqldatetime
-		    Break
+		    
 		    Try
 		      theDate.SQLDateTime = str( theValue )
 		    Catch err as UnsupportedFormatException
 		      theValue = formatMyValueDB( theValue, "", 11 )
-		      theValue = "0000-00-00 " + theValue
+		      theValue = "2017-01-01 " + theValue
 		      Try
 		        theDate.SQLDateTime = str( theValue )
 		      Catch oops as UnsupportedFormatException
@@ -165,6 +164,7 @@ Protected Module myData
 		  dim theMinuteI as Integer
 		  dim theSecondI as Integer
 		  dim theGMTOffset as Double = -6
+		  dim adate as new date
 		  
 		  
 		  theValue = pValue
@@ -211,7 +211,7 @@ Protected Module myData
 		    
 		    // Check if the am or pm  exists
 		    dim theAMPMExists as Boolean
-		    If InStr( theTimeString, "AM" ) <> 0 Or InStr( theTimeString, "PM" ) <> 0 Then
+		    If InStr( theTimeString, "AM" ) <> 0 Or InStr( theTimeString, "PM" ) <> 0  Then
 		      theAMPMExists = True
 		    Else
 		      theAMPMExists = False
@@ -238,6 +238,8 @@ Protected Module myData
 		    // Find the AMPM
 		    If theAMPMExists Then
 		      theAMPM = Right( theTimeString, 2 )
+		    ElseIf theTimeString = "12:00:00" Then
+		      theAMPM = "PM"
 		    Else
 		      theAMPM = "AM"
 		    End If
