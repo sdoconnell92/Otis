@@ -51,7 +51,7 @@ Protected Module myData
 		  dim theDate as new Date
 		  dim converted as Boolean
 		  
-		  
+		  theDate.GMTOffset = -6
 		  theValue = pValue
 		  
 		  Select Case pmdformat
@@ -91,6 +91,7 @@ Protected Module myData
 		    #Pragma BreakOnExceptions Off
 		    
 		    // Converts to time from sqldatetime
+		    Break
 		    Try
 		      theDate.SQLDateTime = str( theValue )
 		    Catch err as UnsupportedFormatException
