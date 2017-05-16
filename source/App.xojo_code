@@ -120,6 +120,14 @@ Inherits Application
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
+		sLICopyDepartment As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		sLIGroupCopy() As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
 		sLineItemstoCopy() As String
 	#tag EndProperty
 

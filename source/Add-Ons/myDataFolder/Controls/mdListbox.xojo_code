@@ -120,10 +120,15 @@ Inherits Listbox
 		  dim SelectedRowTags() as mdRowTag
 		  SelectedRowTags() = me.getSelectedRowTags
 		  
+		  // Check to make sure there are things selected
 		  If SelectedRowTags.Ubound <> -1 Then
 		    
+		    // Clear the current clipboard
 		    Redim App.sLineItemstoCopy(-1)
+		    Redim App.sLIGroupCopy(-1)
+		    App.sLICopyDepartment = ""
 		    
+		    // Loop through each selected row
 		    For Each oRowTag as mdRowTag In SelectedRowTags()
 		      
 		      dim spkid as String
@@ -131,6 +136,11 @@ Inherits Listbox
 		      
 		      If spkid <> "" Then
 		        App.sLineItemstoCopy.Append(spkid)
+		      ElseIf oRowTag.isFolder Then
+		        app.sLICopyDepartment = oRowTag.groupName
+		        For Each schildPKID as string In oRowTag.thepkids()
+		          App.sLIGroupCopy.Append(schildPKID)
+		        Next
 		      End If
 		      
 		    Next
@@ -834,6 +844,33 @@ Inherits Listbox
 		    dim sFields as string
 		    sFields = "name_, manufacturer, model, department, category, subcategory, description, price, quantity_, fkinventory, type_, note_, rate_, discounttype_, total_, time_, discount_, discountperc_, discountamount_, taxable_, taxtotal_, quantity"
 		    theSQL = "Insert Into " + s1 + "( fkeipl, " + sFields + ") Select '" + DestinationEIPLpkid + "', " + sFields + " From " + s1 + " Where pkid = '" + spkid + "' ;"
+		    
+		    ps = otis.db.Prepare( theSQL )
+		    //ps.Bind( 0, pkidlist )
+		    ps.SQLExecute
+		    if otis.db.error then
+		      MsgBox( otis.db.errormessage)
+		    End If
+		    
+		    
+		  Next
+		  
+		  For Each spkid as String In App.sLIGroupCopy()
+		    
+		    // Build the SQL
+		    dim s1, s2(), theSQL as string
+		    dim ps as PostgreSQLPreparedStatement
+		    s1 = mdTableName
+		    s2() = Split( s1, "," )
+		    If s2.Ubound > 0 Then
+		      s1 = s2(0)
+		    Else
+		      s1 = mdTableName
+		    End If
+		    
+		    dim sFields as string
+		    sFields = "name_, manufacturer, model, category, subcategory, description, price, quantity_, fkinventory, type_, note_, rate_, discounttype_, total_, time_, discount_, discountperc_, discountamount_, taxable_, taxtotal_, quantity"
+		    theSQL = "Insert Into " + s1 + "( fkeipl, department, " + sFields + ") Select '" + DestinationEIPLpkid + "', '" + app.sLICopyDepartment + "-copy', " + sFields + " From " + s1 + " Where pkid = '" + spkid + "' ;"
 		    
 		    ps = otis.db.Prepare( theSQL )
 		    //ps.Bind( 0, pkidlist )

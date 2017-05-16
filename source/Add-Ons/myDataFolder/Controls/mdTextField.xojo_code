@@ -219,7 +219,7 @@ Inherits TextField
 		  theValue = me.Text
 		  
 		  If me.Text <> "" Then
-		    Break
+		    
 		    // Format the value
 		    theValue = formatMyValueDB( theValue, "", mdformat )
 		    

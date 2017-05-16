@@ -1,4 +1,4 @@
-KAJU 4B9184FCA6C73AF59A85034902387204112EC18058435F412101856565A0501C40C52D82A4E038F8ED28D1935D193E66A244DFCBEF4F441771B2B67E0C430445D58A0849C9D8221E7EAD78B758140834CEC46C57B8D9EA3DDF3C2595E1E5C6BCF07150EED3D48360994E3AE2F6C37DF038D29B5E9599B80FB706B1A2A29DC3592CB7106FB298BFBBA82D24CE615CABEA719F3B1A7ED19826112790FDF4668FCBC1514EA62B3F1DE8D66DA8DFF385FE3C11F26484D9EFB3EFEB3DAAECBD6C09C6DFB28C4C62317DD6696D19E456F8D58493C0149F5361FBEB354BF9B0F0B09196CF7186796A98691E6B040E34386AA1A2E75EE2647C24F79AE287EB33AD60DD4F
+KAJU 241C59C56C755DAC32E57A42A79DE4D04B9B910714B6EF1DD023E6A1E2FF2AE632FFE718E6405A12E35AD699FED1C213AE78E63E4B8AA0F9E41F5D708D6D365147F0FC7BD5866AC81B6EF1D913CE6C912A2B73309709DBCE42AAD99BDD57757724AD5F03002AEF557ED91232EC5BA16475474C3E96599032F1FBC81635A2E4C23D02D4A06D2E75F438E5BB9C6466AA114465A44B6A7DC001C031E186A8793619518313383B461540AF733ED6B1554C4C5436304949152FC900D0A4739FFDE07FFD9F2978B90D1A0755B0B344BA790D690FD8091B9625CD9A111A53192241EC8718DB6176767823223F101AE3F887EB3B9093462D417F09ADA358A1114D310F89
 [
   {
     "AppName":"otis",
@@ -127,6 +127,19 @@ KAJU 4B9184FCA6C73AF59A85034902387204112EC18058435F412101856565A0501C40C52D82A4E
     "Version":"1.2.0",
     "MacBinary":{
       "Hash":"3410B61BC633A64FA101D0B9E8F7F6E0",
+      "URL":"http://nspdevelopment.weebly.com/uploads/9/6/9/7/9697054/otis.zip"
+    }
+  },
+  {
+    "AppName":"otis",
+    "ImageURL":"",
+    "MinimumRequiredVersion":"",
+    "ReleaseNotes":"<b>v1.2.1</b>\rGeneral\r<ul>\r<li>Fixed issue causing 12pm(noon) displaying as 12am</li>\r</ul>\r<b>v1.2.0</b>\rGeneral\r<ul>\r<li>Copying between EIPLs is now possible</li>\r<li>Deletion of multiple line items is now possible with multi select</li>\r<li>Lines have been added to the Pack List printout</li>\r</ul>\r<b>v1.1.8</b>\rGeneral\r<ul>\r<li>EIPL Inventory now does not refresh when the line item list refreshes</li>\r<li>Fixed a bug causing filtering problems</li>\r<li>Fixed tab order for contact window</li>\r</ul>\r<b>v1.1.6</b>\rGeneral\r<ul>\r<li>Department name now defaults to \"-\" when adding a new line item</li>\r<li>Fixed bug causing saving of a line item to inventory to not work</li>\r<ul>\r<li>You must have a line item selected for saving to inventory to work</li>\r</ul>\r<li>Fixed bug causing inventory filter to fill with non department names</li>\r<li>Fixed the order of inventory items on pack list page when filtered</li>\r</ul>\r<b>v1.1.4</b><br />\rEipl Printouts\r<ul>\r<li>Phone number will now print for the venue</li>\r<li>A space has been added between the colon and the $ in the group summaries</li>\r<li>Increased space available to the group summaries</li>\r<li>Fixed bug causing some prices to display only a single digit after the decimal</li>\r</ul>\rUI Changes\r<ul>\r<li>Changed the color of textfields for line items on the estimate/invoice page to white</li>\r<li>Fixed a bug causing group folders to close when hitting enter while viewing an estimate or invoice</li>\r</ul>\r<b>v1.1.3</b><br />\rEipl Printouts<br />\r<ul>\r<li>Final Summary Subtotal now displays pre line item discounts</li>\r<li>Final Summary now has a Total discounts section</li>\r<li>Final Summary now displays taxe total</li>\r<li>Final Summary now displays balance due even when it is 0</li>\r<li>Top right corner text is now as follows:</li>\r<ul>\r<li>Line 1: Eipl type</li>\r<li>Line 2: Event name</li>\r<li>Line 3: Eipl Name</li>\r</ul>\r</ul>\rGeneral<br />\r<ul>\r<li>You can now select whether each line item is taxable</li>\r<li>Contacts now have a secondary phone line</li>\r<li>There is now a color picker for the background color, found in the file menu</li>\r<li>There is now a dropdown menu for acount manager</li>\r<li>You can now copy/paste eipls</li>\r<ul>\r<li>Right click on the eipl in the eipl list that you wish to copy then click copy</li>\r<li>Right click on the event you wish to copy it too and click paste</li>\r</ul>\r<li>There is now an option to duplicate events in the events menu</li>\r<ul>\r<li>This process takes a while on large events, the app will be frozen during that time</li>\r</ul>\r</ul>\r",
+    "RequiresPayment":false,
+    "UseTransparency":true,
+    "Version":"1.2.1",
+    "MacBinary":{
+      "Hash":"298A0A444D75F543D675F5C3B7AFF4E9",
       "URL":"http://nspdevelopment.weebly.com/uploads/9/6/9/7/9697054/otis.zip"
     }
   }
