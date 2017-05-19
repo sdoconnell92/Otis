@@ -183,13 +183,27 @@ Begin Menu MainMenuBar
       Index = -2147483648
       AutoEnable = True
       Visible = True
-      Begin MenuItem EIPLNewEIPL
+      Begin MenuItem EIPLNewEstimate
          SpecialMenu = 0
-         Text = "New EIPL"
+         Text = "New Estimate"
          Index = -2147483648
          ShortcutKey = "e"
          Shortcut = "Cmd+e"
          MenuModifier = True
+         AutoEnable = True
+         Visible = True
+      End
+      Begin MenuItem EIPLNewInvoice
+         SpecialMenu = 0
+         Text = "New Invoice"
+         Index = -2147483648
+         AutoEnable = True
+         Visible = True
+      End
+      Begin MenuItem EIPLNewPackList
+         SpecialMenu = 0
+         Text = "New Pack List"
+         Index = -2147483648
          AutoEnable = True
          Visible = True
       End

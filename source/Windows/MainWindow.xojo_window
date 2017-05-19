@@ -45,7 +45,7 @@ Begin sdoWindow MainWindow
       TabIndex        =   1
       TabPanelIndex   =   0
       Top             =   0
-      Value           =   3
+      Value           =   2
       Visible         =   True
       Width           =   1182
       Begin Listbox eventList_Listbox
@@ -2770,6 +2770,49 @@ Begin sdoWindow MainWindow
                ReadOnly        =   False
                Scope           =   0
                TabIndex        =   25
+               TabPanelIndex   =   1
+               TabStop         =   True
+               Text            =   ""
+               TextColor       =   &c00000000
+               TextFont        =   "System"
+               TextSize        =   0.0
+               TextUnit        =   0
+               Top             =   594
+               Underline       =   False
+               UseFocusRing    =   True
+               Visible         =   False
+               Width           =   108
+            End
+            Begin TextField descriptionOnlyTf
+               AcceptTabs      =   False
+               Alignment       =   0
+               AutoDeactivate  =   True
+               AutomaticallyCheckSpelling=   False
+               BackColor       =   &cFFFFFF00
+               Bold            =   False
+               Border          =   True
+               CueText         =   ""
+               DataField       =   ""
+               DataSource      =   ""
+               Enabled         =   False
+               Format          =   ""
+               Height          =   22
+               HelpTag         =   ""
+               Index           =   -2147483648
+               InitialParent   =   "Rectangle_LineItemDetails"
+               Italic          =   False
+               Left            =   926
+               LimitText       =   0
+               LockBottom      =   False
+               LockedInPosition=   False
+               LockLeft        =   True
+               LockRight       =   False
+               LockTop         =   True
+               Mask            =   ""
+               Password        =   False
+               ReadOnly        =   False
+               Scope           =   0
+               TabIndex        =   26
                TabPanelIndex   =   1
                TabStop         =   True
                Text            =   ""
@@ -6282,6 +6325,49 @@ Begin sdoWindow MainWindow
                Visible         =   False
                Width           =   108
             End
+            Begin TextField DescriptionOnlyTfPL
+               AcceptTabs      =   False
+               Alignment       =   0
+               AutoDeactivate  =   True
+               AutomaticallyCheckSpelling=   False
+               BackColor       =   &cFFFFFF00
+               Bold            =   False
+               Border          =   True
+               CueText         =   ""
+               DataField       =   ""
+               DataSource      =   ""
+               Enabled         =   False
+               Format          =   ""
+               Height          =   22
+               HelpTag         =   ""
+               Index           =   -2147483648
+               InitialParent   =   "Rectangle_PL_LineItemDetails"
+               Italic          =   False
+               Left            =   684
+               LimitText       =   0
+               LockBottom      =   False
+               LockedInPosition=   False
+               LockLeft        =   True
+               LockRight       =   False
+               LockTop         =   True
+               Mask            =   ""
+               Password        =   False
+               ReadOnly        =   False
+               Scope           =   0
+               TabIndex        =   19
+               TabPanelIndex   =   1
+               TabStop         =   True
+               Text            =   ""
+               TextColor       =   &c00000000
+               TextFont        =   "System"
+               TextSize        =   0.0
+               TextUnit        =   0
+               Top             =   568
+               Underline       =   False
+               UseFocusRing    =   True
+               Visible         =   False
+               Width           =   108
+            End
          End
          Begin Rectangle Rectangle7
             AutoDeactivate  =   True
@@ -8339,9 +8425,29 @@ End
 	#tag EndMenuHandler
 
 	#tag MenuHandler
-		Function EIPLNewEIPL() As Boolean Handles EIPLNewEIPL.Action
+		Function EIPLNewEstimate() As Boolean Handles EIPLNewEstimate.Action
 			
-			newEIPL
+			newEIPL("Estimate")
+			
+			Return True
+			
+		End Function
+	#tag EndMenuHandler
+
+	#tag MenuHandler
+		Function EIPLNewInvoice() As Boolean Handles EIPLNewInvoice.Action
+			
+			newEIPL("Invoice")
+			
+			Return True
+			
+		End Function
+	#tag EndMenuHandler
+
+	#tag MenuHandler
+		Function EIPLNewPackList() As Boolean Handles EIPLNewPackList.Action
+			
+			newEIPL("Pack List")
 			
 			Return True
 			
@@ -8910,7 +9016,7 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub newEIPL()
+		Sub newEIPL(eiplType as string = "Estimate")
 		  dim theEventpkid as string
 		  dim theEIPLpkid as string
 		  dim theSQL as string
@@ -8931,9 +9037,10 @@ End
 		  theEventpkid = theRowTag.pkid
 		  
 		  // Preparing SQL
-		  theSQL = "INSERT INTO eipl ( fkevents_ ) VALUES ( $1 ) RETURNING pkid ;"
+		  theSQL = "INSERT INTO eipl ( fkevents_, type_ ) VALUES ( $1, $2 ) RETURNING pkid ;"
 		  ps = otis.db.Prepare( theSQL )
 		  ps.Bind( 0, theEventpkid )
+		  ps.Bind( 1, eiplType )
 		  
 		  // Executing SQL
 		  otis.db.SQLExecute( "Begin Transaction" )
@@ -9406,6 +9513,33 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
+#tag Events TextField_searchEvents
+	#tag Event
+		Sub KeyUp(Key As String)
+		  dim s1 as string
+		  dim c as Control
+		  
+		  Select Case Asc( Key )
+		  Case 13  'Carriage return
+		    
+		    'Grab the text value
+		    s1 = me.Text
+		    
+		    'Set c to the searchListbox 
+		    c = MainWindow.Listbox_Events
+		    
+		    'Check to make sure c is an mdListbox
+		    If c IsA mdListbox Then
+		      
+		      'Search the Listbox
+		      mdListbox( c ).searchMe( s1 )
+		      
+		    End If
+		    
+		  End Select
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events PushButton_searchEventGo
 	#tag Event
 		Sub Action()
@@ -9624,6 +9758,73 @@ End
 		Sub LostFocus()
 		  dim lb1 as mdListbox = Listbox_LineItems
 		  dim theText as string
+		  break
+		  If me.Text = "" Then
+		    Exit
+		  else
+		    theText = me.Text
+		  End If
+		  
+		  dim li1 as integer = lb1.ListIndex
+		  If li1 <> -1 Then
+		    
+		    // Get all of the selected rowtags
+		    dim aroRowTag() as mdRowTag  = lb1.getSelectedRowTags
+		    
+		    For Each oRowTag as mdRowTag In aroRowTag()
+		      
+		      if oRowTag.isFolder THen
+		        
+		        dim theRowTag as mdRowTag
+		        theRowTag = oRowTag
+		        
+		        For Each sPKID as string In theRowTag.thepkids()
+		          
+		          dim sql1 as string
+		          dim ps1 as PostgreSQLPreparedStatement
+		          
+		          sql1 = "Update lineitems Set department = '" + theText + "' Where pkid = '" + sPKID + "' ;"
+		          ps1 = otis.db.Prepare(sql1)
+		          
+		          ps1.SQLExecute
+		          if otis.db.error then
+		            MsgBox( otis.db.errormessage)
+		          End If
+		          
+		        Next
+		        
+		      Else
+		        
+		        dim sPKID as String = oRowTag.pkid
+		        
+		        if sPKID <> "" Then
+		          dim sql1 as string
+		          dim ps1 as PostgreSQLPreparedStatement
+		          
+		          sql1 = "Update lineitems Set department = '" + theText + "' Where pkid = '" + sPKID + "' ;"
+		          ps1 = otis.db.Prepare(sql1)
+		          
+		          ps1.SQLExecute
+		          if otis.db.error then
+		            MsgBox( otis.db.errormessage)
+		          End If
+		        end if
+		        
+		      end if
+		      
+		    Next
+		    
+		  End If
+		  
+		  lb1.loadMe(True)
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events descriptionOnlyTf
+	#tag Event
+		Sub LostFocus()
+		  dim lb1 as mdListbox = Listbox_LineItems
+		  dim theText as string
 		  
 		  If me.Text = "" Then
 		    Exit
@@ -9634,27 +9835,51 @@ End
 		  dim li1 as integer = lb1.ListIndex
 		  If li1 <> -1 Then
 		    
-		    if lb1.RowIsFolder(li1) THen
+		    // Get all of the selected rowtags
+		    dim aroRowTag() as mdRowTag  = lb1.getSelectedRowTags
+		    
+		    For Each oRowTag as mdRowTag In aroRowTag()
 		      
-		      dim theRowTag as mdRowTag
-		      theRowTag = lb1.RowTag(li1)
+		      if oRowTag.isFolder THen
+		        
+		        dim theRowTag as mdRowTag
+		        theRowTag = oRowTag
+		        
+		        For Each sPKID as string In theRowTag.thepkids()
+		          
+		          dim sql1 as string
+		          dim ps1 as PostgreSQLPreparedStatement
+		          
+		          sql1 = "Update lineitems Set note_ = '" + theText + "' Where pkid = '" + sPKID + "' ;"
+		          ps1 = otis.db.Prepare(sql1)
+		          
+		          ps1.SQLExecute
+		          if otis.db.error then
+		            MsgBox( otis.db.errormessage)
+		          End If
+		          
+		        Next
+		        
+		      Else
+		        
+		        dim sPKID as String = oRowTag.pkid
+		        
+		        if sPKID <> "" Then
+		          dim sql1 as string
+		          dim ps1 as PostgreSQLPreparedStatement
+		          
+		          sql1 = "Update lineitems Set note_ = '" + theText + "' Where pkid = '" + sPKID + "' ;"
+		          ps1 = otis.db.Prepare(sql1)
+		          
+		          ps1.SQLExecute
+		          if otis.db.error then
+		            MsgBox( otis.db.errormessage)
+		          End If
+		        end if
+		        
+		      end if
 		      
-		      For Each sPKID as string In theRowTag.thepkids()
-		        
-		        dim sql1 as string
-		        dim ps1 as PostgreSQLPreparedStatement
-		        
-		        sql1 = "Update lineitems Set department = '" + theText + "' Where pkid = '" + sPKID + "' ;"
-		        ps1 = otis.db.Prepare(sql1)
-		        
-		        ps1.SQLExecute
-		        if otis.db.error then
-		          MsgBox( otis.db.errormessage)
-		        End If
-		        
-		      Next
-		      
-		    end if
+		    Next
 		    
 		  End If
 		  
@@ -9796,8 +10021,9 @@ End
 		  if me.ListIndex = -1 then
 		    return
 		  end if
+		  dim aroRowTag() as mdRowTag = me.getSelectedRowTags
 		  
-		  If me.RowIsFolder( me.ListIndex ) Then
+		  If me.RowIsFolder( me.ListIndex ) Or aroRowTag.Ubound > 0 Then
 		    
 		    dim theRowTag as mdRowTag
 		    theRowTag = me.RowTag(me.ListIndex)
@@ -9814,6 +10040,18 @@ End
 		    departmentOnlyTf.Width = TextField_LineItems_Department.Width
 		    departmentOnlyTf.Height = TextField_LineItems_Department.Height
 		    
+		    // make plain department text field active and fancy md textfield inactive
+		    descriptionOnlyTf.Enabled = True
+		    descriptionOnlyTf.Visible = True
+		    TextField_LineItems_Description.Enabled = False
+		    TextField_LineItems_Description.Visible = False
+		    
+		    descriptionOnlyTf.Text = ""
+		    descriptionOnlyTf.Left = TextField_LineItems_Description.Left
+		    descriptionOnlyTf.Top = TextField_LineItems_Description.Top
+		    descriptionOnlyTf.Width = TextField_LineItems_Description.Width
+		    descriptionOnlyTf.Height = TextField_LineItems_Description.Height
+		    
 		  Else
 		    
 		    // make plain department text field active and fancy md textfield inactive
@@ -9822,8 +10060,18 @@ End
 		    TextField_LineItems_Department.Enabled = True
 		    TextField_LineItems_Department.Visible = True
 		    
+		    // make plain department text field active and fancy md textfield inactive
+		    descriptionOnlyTf.Enabled = False
+		    descriptionOnlyTf.Visible = False
+		    TextField_LineItems_Description.Enabled = True
+		    TextField_LineItems_Description.Visible = True
+		    
 		    me.populateExtControls
 		    TextField_LineItems_QTY.SetFocus
+		    #if TargetWin32 Then
+		      TextField_LineItems_QTY.SelStart = 0
+		      TextField_LineItems_QTY.SelLength = Len(TextField_LineItems_QTY.Text)
+		    #endif
 		    
 		  End If
 		End Sub
@@ -10140,27 +10388,118 @@ End
 		  dim li1 as integer = lb1.ListIndex
 		  If li1 <> -1 Then
 		    
-		    if lb1.RowIsFolder(li1) THen
+		    // Get all of the selected rowtags
+		    dim aroRowTag() as mdRowTag  = lb1.getSelectedRowTags
+		    
+		    For Each oRowTag as mdRowTag In aroRowTag()
 		      
-		      dim theRowTag as mdRowTag
-		      theRowTag = lb1.RowTag(li1)
+		      if oRowTag.isFolder THen
+		        
+		        dim theRowTag as mdRowTag
+		        theRowTag = oRowTag
+		        
+		        For Each sPKID as string In theRowTag.thepkids()
+		          
+		          dim sql1 as string
+		          dim ps1 as PostgreSQLPreparedStatement
+		          
+		          sql1 = "Update lineitems Set department = '" + theText + "' Where pkid = '" + sPKID + "' ;"
+		          ps1 = otis.db.Prepare(sql1)
+		          
+		          ps1.SQLExecute
+		          if otis.db.error then
+		            MsgBox( otis.db.errormessage)
+		          End If
+		          
+		        Next
+		        
+		      Else
+		        
+		        dim sPKID as String = oRowTag.pkid
+		        
+		        if sPKID <> "" Then
+		          dim sql1 as string
+		          dim ps1 as PostgreSQLPreparedStatement
+		          
+		          sql1 = "Update lineitems Set department = '" + theText + "' Where pkid = '" + sPKID + "' ;"
+		          ps1 = otis.db.Prepare(sql1)
+		          
+		          ps1.SQLExecute
+		          if otis.db.error then
+		            MsgBox( otis.db.errormessage)
+		          End If
+		        end if
+		        
+		      end if
 		      
-		      For Each sPKID as string In theRowTag.thepkids()
-		        
-		        dim sql1 as string
-		        dim ps1 as PostgreSQLPreparedStatement
-		        
-		        sql1 = "Update lineitems Set department = '" + theText + "' Where pkid = '" + sPKID + "' ;"
-		        ps1 = otis.db.Prepare(sql1)
-		        
-		        ps1.SQLExecute
-		        if otis.db.error then
-		          MsgBox( otis.db.errormessage)
-		        End If
-		        
-		      Next
+		    Next
+		    
+		  End If
+		  
+		  lb1.loadMe(True)
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events DescriptionOnlyTfPL
+	#tag Event
+		Sub LostFocus()
+		  dim lb1 as mdListbox = Listbox_PL_LineItems
+		  dim theText as string
+		  
+		  If me.Text = "" Then
+		    Exit
+		  else
+		    theText = me.Text
+		  End If
+		  
+		  dim li1 as integer = lb1.ListIndex
+		  If li1 <> -1 Then
+		    
+		    // Get all of the selected rowtags
+		    dim aroRowTag() as mdRowTag  = lb1.getSelectedRowTags
+		    
+		    For Each oRowTag as mdRowTag In aroRowTag()
 		      
-		    end if
+		      if oRowTag.isFolder THen
+		        
+		        dim theRowTag as mdRowTag
+		        theRowTag = oRowTag
+		        
+		        For Each sPKID as string In theRowTag.thepkids()
+		          
+		          dim sql1 as string
+		          dim ps1 as PostgreSQLPreparedStatement
+		          
+		          sql1 = "Update lineitems Set note_ = '" + theText + "' Where pkid = '" + sPKID + "' ;"
+		          ps1 = otis.db.Prepare(sql1)
+		          
+		          ps1.SQLExecute
+		          if otis.db.error then
+		            MsgBox( otis.db.errormessage)
+		          End If
+		          
+		        Next
+		        
+		      Else
+		        
+		        dim sPKID as String = oRowTag.pkid
+		        
+		        if sPKID <> "" Then
+		          dim sql1 as string
+		          dim ps1 as PostgreSQLPreparedStatement
+		          
+		          sql1 = "Update lineitems Set note_ = '" + theText + "' Where pkid = '" + sPKID + "' ;"
+		          ps1 = otis.db.Prepare(sql1)
+		          
+		          ps1.SQLExecute
+		          if otis.db.error then
+		            MsgBox( otis.db.errormessage)
+		          End If
+		        end if
+		        
+		      end if
+		      
+		    Next
 		    
 		  End If
 		  
@@ -10226,23 +10565,38 @@ End
 		  
 		  
 		  if me.ListIndex = -1 then return
+		  dim aroRowTag() as mdRowTag = me.getSelectedRowTags
 		  
-		  If me.RowIsFolder( me.ListIndex ) Then
+		  If me.RowIsFolder( me.ListIndex ) Or aroRowTag.Ubound > 0 Then
 		    
 		    dim theRowTag as mdRowTag
 		    theRowTag = me.RowTag(me.ListIndex)
 		    
-		    // make plain department text field active and fancy md textfield inactive
-		    departmentOnlyTfPL.Enabled = True
-		    departmentOnlyTfPL.Visible = True
-		    TextField_LineItems_Department.Enabled = False
-		    TextField_PL_LineItems_Department.Visible = False
-		    
+		    // Department
 		    departmentOnlyTfPL.Text = theRowTag.groupName
 		    departmentOnlyTfPL.Left = TextField_PL_LineItems_Department.Left
 		    departmentOnlyTfPL.Top = TextField_PL_LineItems_Department.Top
 		    departmentOnlyTfPL.Width = TextField_PL_LineItems_Department.Width
 		    departmentOnlyTfPL.Height = TextField_PL_LineItems_Department.Height
+		    
+		    // make plain department text field active and fancy md textfield inactive
+		    departmentOnlyTfPL.Enabled = True
+		    departmentOnlyTfPL.Visible = True
+		    TextField_PL_LineItems_Department.Enabled = False
+		    TextField_PL_LineItems_Department.Visible = False
+		    
+		    // Desctiption
+		    DescriptionOnlyTfPL.Text = ""
+		    DescriptionOnlyTfPL.Left = TextField_PL_LineItems_Description.Left
+		    DescriptionOnlyTfPL.Top = TextField_PL_LineItems_Description.Top
+		    DescriptionOnlyTfPL.Width = TextField_PL_LineItems_Description.Width
+		    DescriptionOnlyTfPL.Height = TextField_PL_LineItems_Description.Height
+		    
+		    // make plain department text field active and fancy md textfield inactive
+		    DescriptionOnlyTfPL.Enabled = True
+		    DescriptionOnlyTfPL.Visible = True
+		    TextField_PL_LineItems_Description.Enabled = False
+		    TextField_PL_LineItems_Description.Visible = False
 		    
 		  Else
 		    
@@ -10252,8 +10606,18 @@ End
 		    TextField_PL_LineItems_Department.Enabled = True
 		    TextField_PL_LineItems_Department.Visible = True
 		    
+		    // make plain department text field active and fancy md textfield inactive
+		    DescriptionOnlyTfPL.Enabled = False
+		    DescriptionOnlyTfPL.Visible = False
+		    TextField_PL_LineItems_Description.Enabled = True
+		    TextField_PL_LineItems_Description.Visible = True
+		    
 		    me.populateExtControls
 		    TextField_PL_LineItems_QTY.SetFocus
+		    #if TargetWin32 Then
+		      TextField_PL_LineItems_QTY.SelStart = 0
+		      TextField_PL_LineItems_QTY.SelLength = Len(TextField_PL_LineItems_QTY.Text)
+		    #endif
 		    
 		  End If
 		End Sub

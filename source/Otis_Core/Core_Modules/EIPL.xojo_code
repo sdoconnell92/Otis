@@ -422,7 +422,7 @@ Protected Module EIPL
 		    MainWindow.Listbox_LineItems.mdpkFieldName = "pkid"
 		    MainWindow.Listbox_LineItems.mdSortFields = Array( "department", "name_" )
 		    MainWindow.Listbox_LineItems.mdColumnTypes() = Array ( 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0 )
-		    MainWindow.Listbox_LineItems.mdFormats() = Array ( 0, 0, 0, 0, 0, 1, 1 , 3, 1, 0, 0, 0, 0 )
+		    MainWindow.Listbox_LineItems.mdFormats() = Array ( 0, 0, 56, 0, 0, 1, 1 , 3, 1, 0, 0, 0, 0 )
 		    MainWindow.Listbox_LineItems.mdColumnWidths = "29% ,10% ,7% ,7% ,7% ,10% ,10% ,8% ,8%, 4% ,0%,0%,0%"
 		    MainWindow.Listbox_LineItems.mdJustification = Array( 1,1,2,2,2,3,3,3,3,1,0,0,0)
 		    MainWindow.Listbox_LineItems.mdfkFieldName = "fkeipl"

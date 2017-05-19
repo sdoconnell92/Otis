@@ -154,10 +154,11 @@ Protected Class zPrefs
 		    // Open output file
 		    fchild = f.Child( theOutFileName )
 		    If Not fchild.Exists Then
-		      fchild.CreateAsFolder
+		      'fchild.CreateAsFolder
 		    end if
 		    
-		    If fchild.Exists Then
+		    'If fchild.Exists Then
+		    If f.Exists Then
 		      Try
 		        tos = tos.Create( fchild )
 		        

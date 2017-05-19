@@ -57,7 +57,8 @@ Protected Module myData
 		    
 		  Case 0  'No Formatting
 		    
-		    theString = theValue.StringValue
+		    'theString = theValue.StringValue
+		    theString = str(theValue)
 		    
 		  Case 1  'Dollar
 		    // Converts dollar amount from cents to dollars
@@ -84,6 +85,10 @@ Protected Module myData
 		    
 		    // Adding percent
 		    theString = theString + "%"
+		    
+		  Case 56  'Double
+		    
+		    theString = Format(theValue, "##,###.##")
 		    
 		  Case 11  'Time
 		    

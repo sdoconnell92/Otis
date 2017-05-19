@@ -258,6 +258,7 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   5
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "UserName"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -292,6 +293,7 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   6
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Password"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -326,6 +328,7 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   7
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Server Address"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -360,6 +363,7 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   8
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Port"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -394,6 +398,7 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   9
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Database"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -469,6 +474,7 @@ Begin Window Window_Login
       Width           =   80
    End
    Begin zPrefs zPrefsLogin
+      Enabled         =   True
       Index           =   -2147483648
       LockedInPosition=   False
       Scope           =   0
@@ -582,6 +588,7 @@ Begin Window Window_Login
       Selectable      =   False
       TabIndex        =   15
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Version"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -699,17 +706,23 @@ End
 		    password = System.KeyChain.FindPassword(ItemToFind)
 		    dbPassword = password.ToText
 		    
+		  #Else
 		    
+		    if theLineArray.Ubound >= 1 THen
+		      dbPassword = theLineArray(1)
+		    end if
 		    
-		    
-		    
-		    // Set our fields to the variables
-		    TextField_Username.Text = dbUsername
-		    TextField_Password.Text = dbPassword
-		    TextField_serverAddress.Text = dbHost
-		    TextField_Port.Text = dbPort.ToText
-		    TextField_Database.Text = dbName
 		  #EndIf
+		  
+		  // Set our fields to the variables
+		  TextField_Username.Text = dbUsername
+		  TextField_Password.Text = dbPassword
+		  TextField_serverAddress.Text = dbHost
+		  TextField_Port.Text = dbPort.ToText
+		  TextField_Database.Text = dbName
+		  #if DebugBuild Then
+		    TextField_Database.Text = "otis_dev"
+		  #endif
 		  
 		  // Center the window
 		  Left = (screen(0).Width - me.Width) / 2
@@ -782,22 +795,33 @@ End
 
 	#tag Method, Flags = &h0
 		Sub savePassword()
-		  Dim NewItem as KeyChainItem
-		  If System.KeyChainCount > 0 then
-		    
-		    NewItem = New KeyChainItem
-		    'Indicate the name of the application
-		    NewItem.ServiceName = dbUsername + "@Otis"
-		    
-		    'Create a new keychain item for the application and assign the password
-		    System.KeyChain.AddPassword NewItem, dbPassword
-		  Else
-		    Beep
-		    app.MsgBoxAlert( "You don't have a key chain", "No Password Saved", "Ok" )
-		  End if
 		  
-		  Exception err as KeyChainException
-		    'app.MsgBoxAlert( "Can't add item", str( err.Message ).ToText, "Ok" )
+		  #If TargetMacOS Then
+		    Dim NewItem as KeyChainItem
+		    If System.KeyChainCount > 0 then
+		      
+		      NewItem = New KeyChainItem
+		      'Indicate the name of the application
+		      NewItem.ServiceName = dbUsername + "@Otis"
+		      
+		      'Create a new keychain item for the application and assign the password
+		      System.KeyChain.AddPassword NewItem, dbPassword
+		    Else
+		      Beep
+		      app.MsgBoxAlert( "You don't have a key chain", "No Password Saved", "Ok" )
+		    End if
+		    
+		    Exception err as KeyChainException
+		      'app.MsgBoxAlert( "Can't add item", str( err.Message ).ToText, "Ok" )
+		      
+		  #Else 
+		    
+		    zPrefsLogin.clearLines( "users.txt" )
+		    zPrefsLogin.addLine( "users.txt", dbUsername )
+		    zPrefsLogin.addLine( "users.txt", dbPassword )
+		    zPrefsLogin.writeFile( "users.txt" )
+		    
+		  #endif
 		End Sub
 	#tag EndMethod
 
