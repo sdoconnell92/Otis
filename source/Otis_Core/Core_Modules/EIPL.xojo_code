@@ -833,6 +833,13 @@ Protected Module EIPL
 		    MainWindow.TextField_PL_LineItems_QTY.mdpkFieldName = "pkid"
 		    MainWindow.TextField_PL_LineItems_QTY.parentSection = "pl"
 		    
+		    // MainWindow.tf_PL_Truck
+		    MainWindow.tf_PL_Truck.mdTableName = "lineitems"
+		    MainWindow.tf_PL_Truck.mdFieldName = "truck_"
+		    MainWindow.tf_PL_Truck.mdFormat = 0
+		    MainWindow.tf_PL_Truck.mdpkFieldName = "pkid"
+		    MainWindow.tf_PL_Truck.parentSection = "pl"
+		    
 		    
 		    // Inventory
 		    
