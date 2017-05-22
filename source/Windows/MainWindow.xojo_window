@@ -5471,7 +5471,7 @@ Begin sdoWindow MainWindow
          TabIndex        =   0
          TabPanelIndex   =   4
          Top             =   23
-         Value           =   0
+         Value           =   1
          Visible         =   True
          Width           =   1174
          Begin Rectangle Rectangle_PL_LineItemDetails
@@ -5573,7 +5573,7 @@ Begin sdoWindow MainWindow
                Multiline       =   False
                Scope           =   0
                Selectable      =   False
-               TabIndex        =   11
+               TabIndex        =   12
                TabPanelIndex   =   1
                Text            =   "QTY"
                TextAlign       =   0
@@ -5612,7 +5612,7 @@ Begin sdoWindow MainWindow
                Multiline       =   False
                Scope           =   0
                Selectable      =   False
-               TabIndex        =   10
+               TabIndex        =   11
                TabPanelIndex   =   1
                Text            =   "SubCategory"
                TextAlign       =   0
@@ -5753,7 +5753,7 @@ Begin sdoWindow MainWindow
                Multiline       =   False
                Scope           =   0
                Selectable      =   False
-               TabIndex        =   12
+               TabIndex        =   13
                TabPanelIndex   =   1
                Text            =   "Department"
                TextAlign       =   0
@@ -5843,7 +5843,7 @@ Begin sdoWindow MainWindow
                Multiline       =   False
                Scope           =   0
                Selectable      =   False
-               TabIndex        =   13
+               TabIndex        =   14
                TabPanelIndex   =   1
                Text            =   "Model"
                TextAlign       =   0
@@ -5933,7 +5933,7 @@ Begin sdoWindow MainWindow
                Multiline       =   False
                Scope           =   0
                Selectable      =   False
-               TabIndex        =   14
+               TabIndex        =   15
                TabPanelIndex   =   1
                Text            =   "Manufacturer"
                TextAlign       =   0
@@ -6023,7 +6023,7 @@ Begin sdoWindow MainWindow
                Multiline       =   False
                Scope           =   0
                Selectable      =   False
-               TabIndex        =   15
+               TabIndex        =   16
                TabPanelIndex   =   1
                Text            =   "Name"
                TextAlign       =   0
@@ -6167,7 +6167,7 @@ Begin sdoWindow MainWindow
                Multiline       =   False
                Scope           =   0
                Selectable      =   False
-               TabIndex        =   16
+               TabIndex        =   17
                TabPanelIndex   =   1
                Text            =   "Description"
                TextAlign       =   0
@@ -6206,7 +6206,7 @@ Begin sdoWindow MainWindow
                Multiline       =   False
                Scope           =   0
                Selectable      =   False
-               TabIndex        =   17
+               TabIndex        =   18
                TabPanelIndex   =   1
                Text            =   "Category"
                TextAlign       =   0
@@ -6240,7 +6240,7 @@ Begin sdoWindow MainWindow
                LockRight       =   False
                LockTop         =   False
                Scope           =   0
-               TabIndex        =   8
+               TabIndex        =   9
                TabPanelIndex   =   1
                TabStop         =   True
                TextFont        =   "System"
@@ -6271,7 +6271,7 @@ Begin sdoWindow MainWindow
                LockRight       =   False
                LockTop         =   False
                Scope           =   0
-               TabIndex        =   9
+               TabIndex        =   10
                TabPanelIndex   =   1
                TabStop         =   True
                TextFont        =   "System"
@@ -6311,7 +6311,7 @@ Begin sdoWindow MainWindow
                Password        =   False
                ReadOnly        =   False
                Scope           =   0
-               TabIndex        =   18
+               TabIndex        =   19
                TabPanelIndex   =   1
                TabStop         =   True
                Text            =   ""
@@ -6354,7 +6354,7 @@ Begin sdoWindow MainWindow
                Password        =   False
                ReadOnly        =   False
                Scope           =   0
-               TabIndex        =   19
+               TabIndex        =   20
                TabPanelIndex   =   1
                TabStop         =   True
                Text            =   ""
@@ -6389,7 +6389,7 @@ Begin sdoWindow MainWindow
                Multiline       =   False
                Scope           =   0
                Selectable      =   False
-               TabIndex        =   20
+               TabIndex        =   21
                TabPanelIndex   =   1
                Text            =   "Truck"
                TextAlign       =   0
@@ -6434,7 +6434,7 @@ Begin sdoWindow MainWindow
                Password        =   False
                ReadOnly        =   False
                Scope           =   0
-               TabIndex        =   21
+               TabIndex        =   8
                TabPanelIndex   =   1
                TabStop         =   True
                Text            =   ""
@@ -6447,6 +6447,49 @@ Begin sdoWindow MainWindow
                UseFocusRing    =   True
                Visible         =   True
                Width           =   177
+            End
+            Begin TextField tf_PL_Truck_Multi
+               AcceptTabs      =   False
+               Alignment       =   0
+               AutoDeactivate  =   True
+               AutomaticallyCheckSpelling=   False
+               BackColor       =   &cFFFFFF00
+               Bold            =   False
+               Border          =   True
+               CueText         =   ""
+               DataField       =   ""
+               DataSource      =   ""
+               Enabled         =   False
+               Format          =   ""
+               Height          =   22
+               HelpTag         =   ""
+               Index           =   -2147483648
+               InitialParent   =   "Rectangle_PL_LineItemDetails"
+               Italic          =   False
+               Left            =   836
+               LimitText       =   0
+               LockBottom      =   False
+               LockedInPosition=   False
+               LockLeft        =   True
+               LockRight       =   False
+               LockTop         =   True
+               Mask            =   ""
+               Password        =   False
+               ReadOnly        =   False
+               Scope           =   0
+               TabIndex        =   22
+               TabPanelIndex   =   1
+               TabStop         =   True
+               Text            =   ""
+               TextColor       =   &c00000000
+               TextFont        =   "System"
+               TextSize        =   0.0
+               TextUnit        =   0
+               Top             =   550
+               Underline       =   False
+               UseFocusRing    =   True
+               Visible         =   False
+               Width           =   42
             End
          End
          Begin Rectangle Rectangle7
@@ -10587,6 +10630,73 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
+#tag Events tf_PL_Truck_Multi
+	#tag Event
+		Sub LostFocus()
+		  dim lb1 as mdListbox = Listbox_PL_LineItems
+		  dim theText as string
+		  
+		  If me.Text = "" Then
+		    Exit
+		  else
+		    theText = me.Text
+		  End If
+		  
+		  dim li1 as integer = lb1.ListIndex
+		  If li1 <> -1 Then
+		    
+		    // Get all of the selected rowtags
+		    dim aroRowTag() as mdRowTag  = lb1.getSelectedRowTags
+		    
+		    For Each oRowTag as mdRowTag In aroRowTag()
+		      
+		      if oRowTag.isFolder THen
+		        
+		        dim theRowTag as mdRowTag
+		        theRowTag = oRowTag
+		        
+		        For Each sPKID as string In theRowTag.thepkids()
+		          
+		          dim sql1 as string
+		          dim ps1 as PostgreSQLPreparedStatement
+		          
+		          sql1 = "Update lineitems Set truck_ = '" + theText + "' Where pkid = '" + sPKID + "' ;"
+		          ps1 = otis.db.Prepare(sql1)
+		          
+		          ps1.SQLExecute
+		          if otis.db.error then
+		            MsgBox( otis.db.errormessage)
+		          End If
+		          
+		        Next
+		        
+		      Else
+		        
+		        dim sPKID as String = oRowTag.pkid
+		        
+		        if sPKID <> "" Then
+		          dim sql1 as string
+		          dim ps1 as PostgreSQLPreparedStatement
+		          
+		          sql1 = "Update lineitems Set truck_ = '" + theText + "' Where pkid = '" + sPKID + "' ;"
+		          ps1 = otis.db.Prepare(sql1)
+		          
+		          ps1.SQLExecute
+		          if otis.db.error then
+		            MsgBox( otis.db.errormessage)
+		          End If
+		        end if
+		        
+		      end if
+		      
+		    Next
+		    
+		  End If
+		  
+		  lb1.loadMe(True)
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events PushButton_SwitchConVen1
 	#tag Event
 		Sub Action()
@@ -10678,6 +10788,19 @@ End
 		    TextField_PL_LineItems_Description.Enabled = False
 		    TextField_PL_LineItems_Description.Visible = False
 		    
+		    // Truck
+		    tf_PL_Truck_Multi.Text = ""
+		    tf_PL_Truck_Multi.Left = tf_PL_Truck.Left
+		    tf_PL_Truck_Multi.Top = tf_PL_Truck.Top
+		    tf_PL_Truck_Multi.Width = tf_PL_Truck.Width
+		    tf_PL_Truck_Multi.Height = tf_PL_Truck.Height
+		    
+		    // make plain Truck text field active and fancy md textfield inactive
+		    tf_PL_Truck_Multi.Enabled = True
+		    tf_PL_Truck_Multi.Visible = True
+		    tf_PL_Truck.Enabled = True
+		    tf_PL_Truck.Visible = False
+		    
 		  Else
 		    
 		    // make plain department text field active and fancy md textfield inactive
@@ -10686,11 +10809,17 @@ End
 		    TextField_PL_LineItems_Department.Enabled = True
 		    TextField_PL_LineItems_Department.Visible = True
 		    
-		    // make plain department text field active and fancy md textfield inactive
+		    // make plain description text field active and fancy md textfield inactive
 		    DescriptionOnlyTfPL.Enabled = False
 		    DescriptionOnlyTfPL.Visible = False
 		    TextField_PL_LineItems_Description.Enabled = True
 		    TextField_PL_LineItems_Description.Visible = True
+		    
+		    // make plain Truck text field active and fancy md textfield inactive
+		    tf_PL_Truck_Multi.Enabled = False
+		    tf_PL_Truck_Multi.Visible = False
+		    tf_PL_Truck.Enabled = True
+		    tf_PL_Truck.Visible = True
 		    
 		    me.populateExtControls
 		    TextField_PL_LineItems_QTY.SetFocus
@@ -10808,6 +10937,36 @@ End
 		Sub Action()
 		  EIPL.load_inventory
 		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events Label_plName
+	#tag Event
+		Function ConstructContextualMenu(base as MenuItem, x as Integer, y as Integer) As Boolean
+		  dim sPKID as string
+		  
+		  
+		  sPKID = EIPL.pkid
+		  base.Append( new MenuItem(sPKID) ) 
+		  base.Append( new MenuItem("Copy PKID") )
+		  
+		End Function
+	#tag EndEvent
+	#tag Event
+		Function ContextualMenuAction(hitItem as MenuItem) As Boolean
+		  dim sPKID as string
+		  
+		  
+		  sPKID = EIPL.pkid
+		  
+		  Select Case hitItem.Text
+		  Case sPKID
+		    
+		    dim c1 as new Clipboard
+		    c1.Text = hitItem.Text
+		    c1.Close
+		    
+		  End Select
+		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag Events PushButton_PL_Details
