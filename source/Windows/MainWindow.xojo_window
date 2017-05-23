@@ -45,7 +45,7 @@ Begin sdoWindow MainWindow
       TabIndex        =   1
       TabPanelIndex   =   0
       Top             =   0
-      Value           =   3
+      Value           =   2
       Visible         =   True
       Width           =   1182
       Begin Listbox eventList_Listbox
@@ -174,7 +174,7 @@ Begin sdoWindow MainWindow
          Scope           =   0
          ScrollbarHorizontal=   False
          ScrollBarVertical=   True
-         SelectionType   =   0
+         SelectionType   =   1
          TabIndex        =   2
          TabPanelIndex   =   2
          TabStop         =   True
@@ -1620,7 +1620,7 @@ Begin sdoWindow MainWindow
          TabIndex        =   0
          TabPanelIndex   =   3
          Top             =   23
-         Value           =   0
+         Value           =   1
          Visible         =   True
          Width           =   1174
          Begin Rectangle Rectangle_LineItemDetails
@@ -6385,7 +6385,11 @@ Begin sdoWindow MainWindow
                LockLeft        =   True
                LockRight       =   False
                LockTop         =   True
+               mdFieldName     =   ""
                mdFormat        =   0
+               mdpkFieldName   =   ""
+               mdpkValue       =   ""
+               mdTableName     =   ""
                Multiline       =   False
                Scope           =   0
                Selectable      =   False
@@ -6429,11 +6433,17 @@ Begin sdoWindow MainWindow
                LockRight       =   False
                LockTop         =   True
                Mask            =   ""
+               mdFieldName     =   ""
                mdFormat        =   0
                mdpkFieldName   =   "pkid"
+               mdpkValue       =   ""
+               mdTableName     =   ""
+               parentSection   =   ""
                Password        =   False
                ReadOnly        =   False
                Scope           =   0
+               searchField     =   False
+               searchListboxName=   ""
                TabIndex        =   8
                TabPanelIndex   =   1
                TabStop         =   True
@@ -9503,8 +9513,9 @@ End
 		Function ConstructContextualMenu(base as MenuItem, x as Integer, y as Integer) As Boolean
 		  
 		  // Add some items
-		  base.Append(new MenuItem("Copy") )
-		  base.Append(new MenuItem(MenuItem.TextSeparator) )
+		  base.Append( new MenuItem("Copy") )
+		  base.Append( new MenuItem("Consolidate") )
+		  base.Append( new MenuItem(MenuItem.TextSeparator) )
 		  base.Append( new MenuItem( "Delete" ) )
 		  
 		  
@@ -9518,6 +9529,7 @@ End
 		  if hitItem <> Nil then
 		    Select Case hitItem.Text
 		    Case "Delete"
+		      
 		      me.deleteRow
 		      
 		      me.loadMe(true)
@@ -9534,6 +9546,28 @@ End
 		        CopyEiplPKID = thePKID
 		        
 		      End If
+		      
+		    Case "Consolidate"
+		      
+		      dim selectedRowTags() as mdRowTag
+		      selectedRowTags() = ListBox_EIPL.getSelectedRowTags
+		      
+		      dim arsPKIDs() as string
+		      For Each oRowTag as mdRowTag In selectedRowTags()
+		        arsPKIDs.Append(oRowTag.pkid)
+		      Next
+		      dim sPKIDs as string
+		      sPKIDs = Join(arsPKIDs, ",") 
+		      
+		      dim sql1 as string
+		      sql1 = "Select * From consol_eipls('" + sPKIDs + "')"
+		      Otis.db.SQLExecute(sql1)
+		      
+		      if Otis.db.error THen
+		        break
+		      end if
+		      
+		      ListBox_EIPL.loadMe
 		      
 		    End Select
 		  end if
@@ -10467,6 +10501,35 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
+#tag Events Label_eiplName
+	#tag Event
+		Function ContextualMenuAction(hitItem as MenuItem) As Boolean
+		  dim sPKID as string
+		  
+		  
+		  sPKID = EIPL.pkid
+		  
+		  Select Case hitItem.Text
+		  Case sPKID
+		    
+		    dim c1 as new Clipboard
+		    c1.Text = hitItem.Text
+		    c1.Close
+		    
+		  End Select
+		End Function
+	#tag EndEvent
+	#tag Event
+		Function ConstructContextualMenu(base as MenuItem, x as Integer, y as Integer) As Boolean
+		  dim sPKID as string
+		  
+		  
+		  sPKID = EIPL.pkid
+		  base.Append( new MenuItem(sPKID) ) 
+		  
+		End Function
+	#tag EndEvent
+#tag EndEvents
 #tag Events TextField_PL_LineItems_QTY
 	#tag Event
 		Function StopSave() As Boolean
@@ -10947,7 +11010,6 @@ End
 		  
 		  sPKID = EIPL.pkid
 		  base.Append( new MenuItem(sPKID) ) 
-		  base.Append( new MenuItem("Copy PKID") )
 		  
 		End Function
 	#tag EndEvent
