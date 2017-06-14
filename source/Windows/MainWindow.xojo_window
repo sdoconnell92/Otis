@@ -45,7 +45,7 @@ Begin sdoWindow MainWindow
       TabIndex        =   1
       TabPanelIndex   =   0
       Top             =   0
-      Value           =   2
+      Value           =   1
       Visible         =   True
       Width           =   1182
       Begin Listbox eventList_Listbox
@@ -8588,6 +8588,18 @@ End
 	#tag EndMenuHandler
 
 	#tag MenuHandler
+		Function EIPLSearchForEIPL() As Boolean Handles EIPLSearchForEIPL.Action
+			
+			dim w1 as new winFindEIPL
+			
+			w1.Show
+			
+			Return True
+			
+		End Function
+	#tag EndMenuHandler
+
+	#tag MenuHandler
 		Function EventDuplicateEvent() As Boolean Handles EventDuplicateEvent.Action
 			dim event_pkid as string
 			dim sql1 as string
@@ -9549,25 +9561,7 @@ End
 		      
 		    Case "Consolidate"
 		      
-		      dim selectedRowTags() as mdRowTag
-		      selectedRowTags() = ListBox_EIPL.getSelectedRowTags
-		      
-		      dim arsPKIDs() as string
-		      For Each oRowTag as mdRowTag In selectedRowTags()
-		        arsPKIDs.Append(oRowTag.pkid)
-		      Next
-		      dim sPKIDs as string
-		      sPKIDs = Join(arsPKIDs, ",") 
-		      
-		      dim sql1 as string
-		      sql1 = "Select * From consol_eipls('" + sPKIDs + "')"
-		      Otis.db.SQLExecute(sql1)
-		      
-		      if Otis.db.error THen
-		        break
-		      end if
-		      
-		      ListBox_EIPL.loadMe
+		      thr_ConsolidateEIPLS.Run
 		      
 		    End Select
 		  end if

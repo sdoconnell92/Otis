@@ -207,6 +207,20 @@ Begin Menu MainMenuBar
          AutoEnable = True
          Visible = True
       End
+      Begin MenuItem UntitledSeparator2
+         SpecialMenu = 0
+         Text = "-"
+         Index = -2147483648
+         AutoEnable = True
+         Visible = True
+      End
+      Begin MenuItem EIPLSearchForEIPL
+         SpecialMenu = 0
+         Text = "Search For EIPL"
+         Index = -2147483648
+         AutoEnable = True
+         Visible = True
+      End
       Begin MenuItem EIPLAdvanceEIPL
          SpecialMenu = 0
          Text = "Advance EIPL"
