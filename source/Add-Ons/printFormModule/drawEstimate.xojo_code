@@ -614,7 +614,7 @@ Protected Class drawEstimate
 		  
 		  // Set info box info
 		  estimateInfoBoxText = "Please note that this estimate serves only as a proposal and is no way a contract for services to be provided.  If you wish to contract the proposed services please contact us to confirm your acceptance of this proposal.  This estimate is valid for 30 days.  Thank You. "
-		  invoiceInfoBoxText = "Thank you for your business! We look forward to continuing to work with you on great events in the future!  Please remit payment to: Northern Sun Productions, 522 6th Ave NW, Rochester, MN. 55901.  Thank You."
+		  invoiceInfoBoxText = "Thank you for your business! We look forward to continuing to work with you on great events in the future!  Please remit payment to: Northern Sun Productions, 7538 50th Ave NE, Rochester, MN 55906.  Thank You."
 		  
 		  dim sourceListbox as mdListbox
 		  
