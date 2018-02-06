@@ -623,7 +623,7 @@ End
 		  otis.db.Port = dbPort
 		  otis.db.DatabaseName = dbName
 		  
-		  
+		  Break
 		  
 		  If otis.db.Connect Then
 		    app.logged_in = True

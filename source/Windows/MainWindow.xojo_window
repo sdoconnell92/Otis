@@ -84,6 +84,7 @@ Begin sdoWindow MainWindow
          ScrollbarHorizontal=   False
          ScrollBarVertical=   True
          SelectionType   =   0
+         ShowDropIndicator=   False
          TabIndex        =   0
          TabPanelIndex   =   1
          TabStop         =   True
@@ -120,6 +121,7 @@ Begin sdoWindow MainWindow
          Selectable      =   False
          TabIndex        =   1
          TabPanelIndex   =   1
+         TabStop         =   True
          Text            =   "[ {Filtered / }Found ]"
          TextAlign       =   0
          TextColor       =   &c00000000
@@ -175,6 +177,7 @@ Begin sdoWindow MainWindow
          ScrollbarHorizontal=   False
          ScrollBarVertical=   True
          SelectionType   =   1
+         ShowDropIndicator=   False
          TabIndex        =   2
          TabPanelIndex   =   2
          TabStop         =   True
@@ -232,6 +235,7 @@ Begin sdoWindow MainWindow
          ScrollbarHorizontal=   False
          ScrollBarVertical=   True
          SelectionType   =   0
+         ShowDropIndicator=   False
          TabIndex        =   3
          TabPanelIndex   =   2
          TabStop         =   True
@@ -427,6 +431,7 @@ Begin sdoWindow MainWindow
             Selectable      =   False
             TabIndex        =   17
             TabPanelIndex   =   2
+            TabStop         =   True
             Text            =   "Venues"
             TextAlign       =   1
             TextColor       =   &c00000000
@@ -512,6 +517,7 @@ Begin sdoWindow MainWindow
             Selectable      =   False
             TabIndex        =   18
             TabPanelIndex   =   2
+            TabStop         =   True
             Text            =   "Event Name"
             TextAlign       =   0
             TextColor       =   &c00000000
@@ -546,6 +552,7 @@ Begin sdoWindow MainWindow
             Selectable      =   False
             TabIndex        =   19
             TabPanelIndex   =   2
+            TabStop         =   True
             Text            =   "Start"
             TextAlign       =   0
             TextColor       =   &c00000000
@@ -580,6 +587,7 @@ Begin sdoWindow MainWindow
             Selectable      =   False
             TabIndex        =   20
             TabPanelIndex   =   2
+            TabStop         =   True
             Text            =   "Load In"
             TextAlign       =   0
             TextColor       =   &c00000000
@@ -614,6 +622,7 @@ Begin sdoWindow MainWindow
             Selectable      =   False
             TabIndex        =   21
             TabPanelIndex   =   2
+            TabStop         =   True
             Text            =   "End"
             TextAlign       =   0
             TextColor       =   &c00000000
@@ -648,6 +657,7 @@ Begin sdoWindow MainWindow
             Selectable      =   False
             TabIndex        =   22
             TabPanelIndex   =   2
+            TabStop         =   True
             Text            =   "Load Out"
             TextAlign       =   0
             TextColor       =   &c00000000
@@ -682,6 +692,7 @@ Begin sdoWindow MainWindow
             Selectable      =   False
             TabIndex        =   23
             TabPanelIndex   =   2
+            TabStop         =   True
             Text            =   "Details"
             TextAlign       =   0
             TextColor       =   &c00000000
@@ -791,6 +802,7 @@ Begin sdoWindow MainWindow
             ScrollbarHorizontal=   False
             ScrollBarVertical=   True
             SelectionType   =   0
+            ShowDropIndicator=   False
             TabIndex        =   24
             TabPanelIndex   =   2
             TabStop         =   True
@@ -848,6 +860,7 @@ Begin sdoWindow MainWindow
             ScrollbarHorizontal=   False
             ScrollBarVertical=   True
             SelectionType   =   0
+            ShowDropIndicator=   False
             TabIndex        =   25
             TabPanelIndex   =   2
             TabStop         =   True
@@ -884,6 +897,7 @@ Begin sdoWindow MainWindow
             Selectable      =   False
             TabIndex        =   26
             TabPanelIndex   =   2
+            TabStop         =   True
             Text            =   "Contacts"
             TextAlign       =   1
             TextColor       =   &c00000000
@@ -1557,6 +1571,7 @@ Begin sdoWindow MainWindow
             Selectable      =   False
             TabIndex        =   27
             TabPanelIndex   =   2
+            TabStop         =   True
             Text            =   "Acount Manager"
             TextAlign       =   0
             TextColor       =   &c00000000
@@ -1724,6 +1739,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   13
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "QTY"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -1763,6 +1779,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   14
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Price"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -1802,6 +1819,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   15
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "SubCategory"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -1943,6 +1961,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   17
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Department"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -2033,6 +2052,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   18
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Model"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -2123,6 +2143,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   19
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Manufacturer"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -2213,6 +2234,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   20
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Name"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -2354,6 +2376,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   21
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Rate"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -2447,6 +2470,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   22
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Description"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -2537,6 +2561,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   23
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Time"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -2576,6 +2601,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   24
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Discount"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -2615,6 +2641,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   16
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Category"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -3001,6 +3028,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   0
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3040,6 +3068,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   1
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3079,6 +3108,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   2
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3118,6 +3148,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   3
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3157,6 +3188,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   4
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3196,6 +3228,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   5
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3235,6 +3268,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   6
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3274,6 +3308,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   7
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3313,6 +3348,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   8
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3352,6 +3388,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   9
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3391,6 +3428,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   10
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3430,6 +3468,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   11
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3469,6 +3508,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   0
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3508,6 +3548,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   1
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3547,6 +3588,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   2
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3586,6 +3628,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   3
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3625,6 +3668,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   4
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3664,6 +3708,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   6
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3703,6 +3748,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   7
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3742,6 +3788,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   8
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3781,6 +3828,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   9
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3820,6 +3868,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   10
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3859,6 +3908,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   11
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -3893,6 +3943,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   12
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "Venue"
                   TextAlign       =   1
                   TextColor       =   &c00000000
@@ -3927,6 +3978,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   12
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "Contact"
                   TextAlign       =   1
                   TextColor       =   &c00000000
@@ -4099,6 +4151,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   7
                TabPanelIndex   =   2
+               TabStop         =   True
                Text            =   "Due Date"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -4184,6 +4237,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   8
                TabPanelIndex   =   2
+               TabStop         =   True
                Text            =   "Shipping Method"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -4218,6 +4272,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   9
                TabPanelIndex   =   2
+               TabStop         =   True
                Text            =   "Tax Rate"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -4354,6 +4409,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   10
                TabPanelIndex   =   2
+               TabStop         =   True
                Text            =   "Discount"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -4555,6 +4611,7 @@ Begin sdoWindow MainWindow
                ScrollbarHorizontal=   False
                ScrollBarVertical=   True
                SelectionType   =   0
+               ShowDropIndicator=   False
                TabIndex        =   2
                TabPanelIndex   =   2
                TabStop         =   True
@@ -4591,6 +4648,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   3
                TabPanelIndex   =   2
+               TabStop         =   True
                Text            =   "Discounts"
                TextAlign       =   1
                TextColor       =   &c00000000
@@ -4646,6 +4704,7 @@ Begin sdoWindow MainWindow
                ScrollbarHorizontal=   False
                ScrollBarVertical=   True
                SelectionType   =   0
+               ShowDropIndicator=   False
                TabIndex        =   1
                TabPanelIndex   =   2
                TabStop         =   True
@@ -4682,6 +4741,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   4
                TabPanelIndex   =   2
+               TabStop         =   True
                Text            =   "Payments"
                TextAlign       =   1
                TextColor       =   &c00000000
@@ -4827,6 +4887,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   4
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "eipl number"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -4913,6 +4974,7 @@ Begin sdoWindow MainWindow
                ScrollbarHorizontal=   False
                ScrollBarVertical=   True
                SelectionType   =   1
+               ShowDropIndicator=   False
                TabIndex        =   5
                TabPanelIndex   =   1
                TabStop         =   True
@@ -4949,6 +5011,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   6
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Balance Due:"
                TextAlign       =   2
                TextColor       =   &c00000000
@@ -4988,6 +5051,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   7
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Value"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -5022,6 +5086,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   8
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Total:"
                TextAlign       =   2
                TextColor       =   &c00000000
@@ -5061,6 +5126,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   9
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Value"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -5100,6 +5166,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   10
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Type"
                TextAlign       =   2
                TextColor       =   &c00000000
@@ -5134,6 +5201,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   11
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   ":"
                TextAlign       =   1
                TextColor       =   &c00000000
@@ -5222,6 +5290,7 @@ Begin sdoWindow MainWindow
                ScrollbarHorizontal=   False
                ScrollBarVertical=   True
                SelectionType   =   0
+               ShowDropIndicator=   False
                TabIndex        =   3
                TabPanelIndex   =   1
                TabStop         =   True
@@ -5438,6 +5507,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   1
                TabPanelIndex   =   2
+               TabStop         =   True
                Text            =   "EIPL Name"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -5575,6 +5645,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   12
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "QTY"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -5614,6 +5685,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   11
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "SubCategory"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -5755,6 +5827,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   13
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Department"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -5845,6 +5918,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   14
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Model"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -5935,6 +6009,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   15
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Manufacturer"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -6025,6 +6100,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   16
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Name"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -6169,6 +6245,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   17
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Description"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -6208,6 +6285,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   18
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Category"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -6395,6 +6473,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   21
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Truck"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -6574,6 +6653,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   0
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -6613,6 +6693,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   1
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -6652,6 +6733,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   2
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -6691,6 +6773,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   3
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -6730,6 +6813,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   4
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -6769,6 +6853,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   5
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -6808,6 +6893,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   6
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -6847,6 +6933,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   7
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -6886,6 +6973,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   8
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -6925,6 +7013,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   9
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -6964,6 +7053,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   10
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -6998,6 +7088,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   11
                   TabPanelIndex   =   2
+                  TabStop         =   True
                   Text            =   "Venue"
                   TextAlign       =   1
                   TextColor       =   &c00000000
@@ -7032,6 +7123,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   0
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "Contact"
                   TextAlign       =   1
                   TextColor       =   &c00000000
@@ -7071,6 +7163,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   1
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -7110,6 +7203,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   2
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -7149,6 +7243,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   3
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -7188,6 +7283,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   4
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -7227,6 +7323,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   5
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -7266,6 +7363,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   6
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -7305,6 +7403,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   7
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -7344,6 +7443,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   8
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -7383,6 +7483,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   9
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -7422,6 +7523,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   10
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -7461,6 +7563,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   11
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -7500,6 +7603,7 @@ Begin sdoWindow MainWindow
                   Selectable      =   False
                   TabIndex        =   12
                   TabPanelIndex   =   1
+                  TabStop         =   True
                   Text            =   "-"
                   TextAlign       =   0
                   TextColor       =   &c00000000
@@ -7621,6 +7725,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   0
                TabPanelIndex   =   2
+               TabStop         =   True
                Text            =   "Type"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -7707,6 +7812,7 @@ Begin sdoWindow MainWindow
             Selectable      =   False
             TabIndex        =   3
             TabPanelIndex   =   2
+            TabStop         =   True
             Text            =   "Shipping Method"
             TextAlign       =   0
             TextColor       =   &c00000000
@@ -7931,6 +8037,7 @@ Begin sdoWindow MainWindow
                ScrollbarHorizontal=   False
                ScrollBarVertical=   True
                SelectionType   =   1
+               ShowDropIndicator=   False
                TabIndex        =   4
                TabPanelIndex   =   1
                TabStop         =   True
@@ -7972,6 +8079,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   5
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "Type"
                TextAlign       =   2
                TextColor       =   &c00000000
@@ -8060,6 +8168,7 @@ Begin sdoWindow MainWindow
                ScrollbarHorizontal=   False
                ScrollBarVertical=   True
                SelectionType   =   0
+               ShowDropIndicator=   False
                TabIndex        =   3
                TabPanelIndex   =   1
                TabStop         =   True
@@ -8101,6 +8210,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   6
                TabPanelIndex   =   1
+               TabStop         =   True
                Text            =   "pl number"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -8190,6 +8300,7 @@ Begin sdoWindow MainWindow
                Selectable      =   False
                TabIndex        =   0
                TabPanelIndex   =   2
+               TabStop         =   True
                Text            =   "EIPL Name"
                TextAlign       =   0
                TextColor       =   &c00000000
@@ -8370,6 +8481,7 @@ Begin sdoWindow MainWindow
          Selectable      =   False
          TabIndex        =   4
          TabPanelIndex   =   4
+         TabStop         =   True
          Text            =   "Event Name Here"
          TextAlign       =   1
          TextColor       =   &c00000000
@@ -8404,6 +8516,7 @@ Begin sdoWindow MainWindow
          Selectable      =   False
          TabIndex        =   4
          TabPanelIndex   =   3
+         TabStop         =   True
          Text            =   "Event Name Here"
          TextAlign       =   1
          TextColor       =   &c00000000
@@ -8443,6 +8556,7 @@ Begin sdoWindow MainWindow
          Selectable      =   False
          TabIndex        =   5
          TabPanelIndex   =   3
+         TabStop         =   True
          Text            =   "EIPL Name"
          TextAlign       =   0
          TextColor       =   &c00000000
@@ -8482,6 +8596,7 @@ Begin sdoWindow MainWindow
          Selectable      =   False
          TabIndex        =   5
          TabPanelIndex   =   4
+         TabStop         =   True
          Text            =   "EIPL Name"
          TextAlign       =   0
          TextColor       =   &c00000000
@@ -9561,7 +9676,7 @@ End
 		      
 		    Case "Consolidate"
 		      
-		      thr_ConsolidateEIPLS.Run
+		      //thr_ConsolidateEIPLS.Run
 		      
 		    End Select
 		  end if
