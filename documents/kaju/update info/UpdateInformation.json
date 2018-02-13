@@ -1,4 +1,4 @@
-KAJU 6395FCA68327E0A4D96073780BAB5997315D555AC0F3E8D03794F7A084B60DC4B28F05D1EF180BDD8C582D7A18CDE19A8C1D304E70C1694E51B19DB3833A53A6B4FEA92A299C012049E3155B2EB45E798C40732744738F75D9BBA7F291661236B6596F1DE68C72B239C6814E07403249C4D91CAF7843240D1C15C1441BC6F85A0E39B5E51CF9F05B58D0AE791DEBCE935A9E8D5341BE5F9081E3B67A3AE4D1EC98FC709E4F5FF27D9E5B27FFBB420FAC5378FBC153EB1C0642CF263C3CD90B4ECFA15947B4A67136F6A1C067CAC0A4196773B2FE294D647FF527501D7BC5ED46CECAE97D872F144A2EF1EBA533FC3A114298336D2E8E7D25EBC1D267593EF665
+KAJU 4F1DE90B696212F34DCE1504EBEF339BE5638A662B8310714511AAB46BB499B1FD2E65D7B429367241263015FD4DEAC95B8C5E2D4F7A86BD1DB5320452FF2D8D17039F27DCD36316CE213E098203A89F579F4445381C414E954252699E9EF1D0EC743B78CAC6CB8CB33E97E34D7899980508DD8524713B5D722D33821939FD49B36C72F48E387A8570094A785A44109F7FDA4D801E4A49615AA7156B287EA42E0934A608581FB754E191FDCE6D45B36BB71F15981BE19C2B1F7BDCE8449E4305E61A9A8AA93C4DCF478C3F70A3FFF3A1BB24DF88529FDFED4C6AF05A9DD0F3465E55CDE3575F2984E86A8987A74753E16C24CAB66B0EA28A5537CA3AF54DEEE6
 [
   {
     "AppName":"otis",
@@ -167,6 +167,19 @@ KAJU 6395FCA68327E0A4D96073780BAB5997315D555AC0F3E8D03794F7A084B60DC4B28F05D1EF1
     "MacBinary":{
       "Hash":"CF1FC5CF0B6A733689DBEDD65387A31B",
       "URL":"http://nspdevelopment.weebly.com/uploads/9/6/9/7/9697054/otis.zip"
+    }
+  },
+  {
+    "AppName":"otis",
+    "ImageURL":"",
+    "MinimumRequiredVersion":"",
+    "ReleaseNotes":"<b>v1.2.3</b>\rGeneral\r<ul>\r<li>Can now hit enter to search event list</li>\r<li>Eipl creation has been broken up into 3 menu items, one for each type of eipl</li>\r<li>Fixed bug that would cause time to display in scientific notation in the listbox and on printouts</li>\r<li>Can now change the department and the description for all items selected at the same time</li>\r<li>Users can now save login info on windows</li>\r<li>Quantity auto-selects when changing lineitems on windows now</li>\r</ul>\r<b>v1.2.2</b>\rGeneral\r<ul>\r<li>Departments can now be copied and pasted<br />\rAll copied items department names will have '-copy' appended</li>\r<li>Department names can be changed for all items in said department at the same time</li>\r<li>An icon has finally been added to the application!</li>\r</ul>\r<b>v1.2.1</b>\rGeneral\r<ul>\r<li>Fixed issue causing 12pm(noon) displaying as 12am</li>\r</ul>\r<b>v1.2.0</b>\rGeneral\r<ul>\r<li>Copying between EIPLs is now possible</li>\r<li>Deletion of multiple line items is now possible with multi select</li>\r<li>Lines have been added to the Pack List printout</li>\r</ul>\r<b>v1.1.8</b>\rGeneral\r<ul>\r<li>EIPL Inventory now does not refresh when the line item list refreshes</li>\r<li>Fixed a bug causing filtering problems</li>\r<li>Fixed tab order for contact window</li>\r</ul>\r<b>v1.1.6</b>\rGeneral\r<ul>\r<li>Department name now defaults to \"-\" when adding a new line item</li>\r<li>Fixed bug causing saving of a line item to inventory to not work</li>\r<ul>\r<li>You must have a line item selected for saving to inventory to work</li>\r</ul>\r<li>Fixed bug causing inventory filter to fill with non department names</li>\r<li>Fixed the order of inventory items on pack list page when filtered</li>\r</ul>\r<b>v1.1.4</b><br />\rEipl Printouts\r<ul>\r<li>Phone number will now print for the venue</li>\r<li>A space has been added between the colon and the $ in the group summaries</li>\r<li>Increased space available to the group summaries</li>\r<li>Fixed bug causing some prices to display only a single digit after the decimal</li>\r</ul>\rUI Changes\r<ul>\r<li>Changed the color of textfields for line items on the estimate/invoice page to white</li>\r<li>Fixed a bug causing group folders to close when hitting enter while viewing an estimate or invoice</li>\r</ul>\r<b>v1.1.3</b><br />\rEipl Printouts<br />\r<ul>\r<li>Final Summary Subtotal now displays pre line item discounts</li>\r<li>Final Summary now has a Total discounts section</li>\r<li>Final Summary now displays taxe total</li>\r<li>Final Summary now displays balance due even when it is 0</li>\r<li>Top right corner text is now as follows:</li>\r<ul>\r<li>Line 1: Eipl type</li>\r<li>Line 2: Event name</li>\r<li>Line 3: Eipl Name</li>\r</ul>\r</ul>\rGeneral<br />\r<ul>\r<li>You can now select whether each line item is taxable</li>\r<li>Contacts now have a secondary phone line</li>\r<li>There is now a color picker for the background color, found in the file menu</li>\r<li>There is now a dropdown menu for acount manager</li>\r<li>You can now copy/paste eipls</li>\r<ul>\r<li>Right click on the eipl in the eipl list that you wish to copy then click copy</li>\r<li>Right click on the event you wish to copy it too and click paste</li>\r</ul>\r<li>There is now an option to duplicate events in the events menu</li>\r<ul>\r<li>This process takes a while on large events, the app will be frozen during that time</li>\r</ul>\r</ul>\r",
+    "RequiresPayment":false,
+    "UseTransparency":true,
+    "Version":"1.3.0",
+    "MacBinary":{
+      "Hash":"8CD631CCEF6C62ED9740AD1DF242D391",
+      "URL":"https://nspdevelopment.weebly.com/uploads/9/6/9/7/9697054/otis.zip"
     }
   }
 ]
